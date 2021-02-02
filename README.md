@@ -13,7 +13,7 @@ Currently building this out using Gatsby, GraphQL and Contentful as a headless C
 
 ## 🤠 Get Started 
 
-1.  **Make sure to install the gatsby CLI**
+1.  **Make sure to install the Gatsby CLI**
 
 
     ```shell
