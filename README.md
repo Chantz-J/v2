@@ -8,9 +8,8 @@
   Personal Website - v2
 </h1> 
 
-Currently building this out using Gatsby, GraphQL and Contentful as a headless CMS. It will most likely be hosted Netlify.
+Currently building this out using Gatsby, GraphQL and Contentful as a headless CMS. It will most likely be hosted with Netlify.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
 ## 🤠 Get Started 
 
