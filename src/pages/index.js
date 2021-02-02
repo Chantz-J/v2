@@ -29,12 +29,12 @@ const IntroText__box = styled.div`
 `)
 // console.log(data.site.siteMetadata.description)
 
-const metStyle = x => {
-  const toStyleArray = []
-  let str = x
-  let res = str.split(" ")
-  toStyleArray.push(res)
-  console.log(toStyleArray)
+// const metStyle = x => {
+//   const toStyleArray = []
+//   let str = x
+//   let res = str.split(" ")
+//   toStyleArray.push(res)
+//   console.log(toStyleArray)
 
 //  for (let i = 0; i < toStyleArray.length; i++ ){
 //    if(toStyleArray[i] === [13] || toStyleArray[i] === [15] || toStyleArray[i] === [16] || toStyleArray[i] === [17]){
@@ -42,8 +42,8 @@ const metStyle = x => {
 //      y.style.color = white
 //    }
 //  }
-}
-metStyle(data.site.siteMetadata.description)
+// }
+// metStyle(data.site.siteMetadata.description)
 
   return (
       <Layout>

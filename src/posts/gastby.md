@@ -8,5 +8,4 @@ First blog post
 ## Things I've learned so far
 
 1.Gatsby basics   
-
 2.Graphql basics
