@@ -18,12 +18,18 @@ const Blog = () => {
         }
       }
     `)
-    console.log(data)
     return (
         <Layout>
-            <ul>
-                
-            </ul>
+            <ol>
+              {data.allMarkdownRemark.edges.map(x => {
+                return (
+                  <li>
+                    <h2>{x.node.frontmatter.title}</h2>
+                    <p>{x.node.frontmatter.date}</p>
+                  </li>
+                )
+              })}
+            </ol>
         </Layout>
     )
 }

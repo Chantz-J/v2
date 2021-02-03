@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`, //Pull content from external source
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts/`
+        name: `src`,
+        path: `${__dirname}/src/`
       }
     },
     {
@@ -30,8 +30,8 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        name: `posts`,
-        path: `${__dirname}/src/posts/`,
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
     
