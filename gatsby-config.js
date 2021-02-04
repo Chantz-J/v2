@@ -17,21 +17,32 @@ module.exports = {
     },
 
     {
-      resolve: `gatsby-source-filesystem`, //Pull content from external source
+      resolve: `gatsby-source-filesystem`, //Pull content/markdown from files
       options: {
         name: `src`,
         path: `${__dirname}/src/`
       }
     },
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        commonmark: true,
-        footnotes: true,
-        pedantic: true,
-        gfm: true,
-        name: `src`,
-        path: `${__dirname}/src/`,
+        plugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: 'gatsby-remark-images',
+            options: { 
+              maxWidth: 750,
+              linkImagesToOriginal: false,
+            }
+          }
+        ],
+        // commonmark: true,
+        // footnotes: true,
+        // pedantic: true,
+        // gfm: true,
+        // name: `src`,
+        // path: `${__dirname}/src/`,
       },
     },
     

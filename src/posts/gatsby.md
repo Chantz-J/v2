@@ -5,6 +5,8 @@ title : "First Blog"
 
 First blog post 
 
+
+![text editor](./code-pic.jpeg)
 ## Things I've learned so far
 
 1.Gatsby basics   
