@@ -25,7 +25,7 @@ module.exports.createPages = async ({graphql , actions}) => {
                 edges {
                   node {
                     fields {
-                      slug
+                      slug 
                     }
                   }
                 }

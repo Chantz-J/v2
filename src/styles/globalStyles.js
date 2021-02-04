@@ -51,5 +51,8 @@ const GlobalStyle = createGlobalStyle`
             font-size: 2rem;
         }
     }
+    footer {
+        margin-top: 3rem;
+    }
 `
 export default GlobalStyle
