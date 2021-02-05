@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 
 import Layout from '../components/layout'
-
+import Head from '../components/head'
 
 const IntroText__box = styled.div`
   width: 60%;
@@ -47,6 +47,7 @@ const IntroText__box = styled.div`
 
   return (
       <Layout>
+        <Head title="Home"/>
         <section className="intro">
           <IntroText__box>
             <h1>{data.site.siteMetadata.description}</h1>
