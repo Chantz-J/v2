@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+    :root {
+        --light: #EAF2F8; 
+        --dark: #212F3C;
+    }
+    
     * {
         padding: 0;
         margin: 0;
@@ -11,10 +16,13 @@ const GlobalStyle = createGlobalStyle`
             box-sizing: border-box;
         }
     }
-
+    
     ::selection {
         background-color: #e9e9e9;
         color: #fff;
+    }
+    body {
+        background-color: var(--light);
     }
 
     nav {
