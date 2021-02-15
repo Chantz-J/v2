@@ -6,7 +6,6 @@ import Head from '../components/head'
 
 
 const Blog = () => {
-  
     const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost (

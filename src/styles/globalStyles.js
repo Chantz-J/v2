@@ -1,11 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 
+
 const GlobalStyle = createGlobalStyle`
     :root {
         --light: #EAF2F8; 
         --dark: #212F3C;
+        --off-white: #e5e5e5;
     }
     
+    
+
     * {
         padding: 0;
         margin: 0;
@@ -48,19 +52,23 @@ const GlobalStyle = createGlobalStyle`
     }
 
     header {
+        
         padding: 2rem 0 3rem;
+        grid-area: head;
     }
     section {
         margin-top: 2rem;
         padding: 60px 0;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid var(--off-white);
 
         .intro-Text {
             font-size: 2rem;
         }
+        
     }
     footer {
         margin-top: 3rem;
+        margin-top: auto;
     }
 `
 export default GlobalStyle
