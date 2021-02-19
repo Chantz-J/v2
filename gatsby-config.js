@@ -5,7 +5,35 @@ module.exports = {
    author: 'Chantz Johnson',
    description: `I'm a web developer based in Tampa, FL specializing in 
    building 🤠 exceptional websites, applications,
-   and everything in between.`
+   and everything in between.`,
+   siteURL: '',
+   email: 'johnson.chantz@gmail.com',
+   github: 'https://github.com/Chantz-J',
+   linkedIn: 'https://www.linkedin.com/in/chantz-j-603034206/',
+   codePen: 'https://codepen.io/Moon_River',
+
+   menuLinks: [
+     {
+       name: 'Home',
+       link: '/'
+     },
+     {
+       name: 'About',
+       link: '/about'
+     },
+     {
+      name: 'Blog',
+      link: '/blog'
+    },
+    {
+      name: 'Contact',
+      link: '/contact'
+    },
+  
+   ]
+
+
+
  },
   plugins: [
     

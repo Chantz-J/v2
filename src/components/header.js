@@ -8,6 +8,10 @@ const Header = () => {
             site {
                 siteMetadata {
                     title
+                    menuLinks {
+                        name
+                        link
+                      }
                 }
             }
         }
@@ -17,10 +21,16 @@ const Header = () => {
             <nav>
                 <h2><Link to='/'>{data.site.siteMetadata.title}</Link></h2>
                 <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/about'>About</Link></li>
-                    <li><Link to='/blog'>Blog</Link></li>
-                    <li><Link to='/contact'>Contact</Link></li>
+                    {
+                        data.site.siteMetadata.menuLinks.map(link => {
+                            return (
+                                <li key={link.name}>
+                                     <Link to={link.link}>{link.name}</Link>
+                                </li>
+                            )
+                        })
+                    }
+
                 </ul>
             </nav>
         </header>
