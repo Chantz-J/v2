@@ -1,19 +1,29 @@
 import React from "react"
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
-
 
 import Layout from '../components/layout'
 import Head from '../components/head'
 
-const IntroText__box = styled.section`
+const IndexSection = styled.section`
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+  ". index index index index index index index index index index index index index ."
+  ". index index index index index index index index index index index index index ."
+  ". index index index index index index index index index index index index index ."
+  ". index index index index index index index index index index index index index .";
+`
+
+const IntroText__box = styled.div`
+  grid-area: index;
   width: 60%;
   margin-top: 4rem;
   h1 {
     font-family: Open Sans, sans-serif;
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 3.4rem;
   }
 `
 
@@ -42,7 +52,7 @@ const IntroText__box = styled.section`
   return (
       <Layout>
         <Head title="Home"/>
-        <section className="intro">
+        <IndexSection>
           <IntroText__box>
             <h1>{data.site.siteMetadata.description}</h1>
             {/* <h2>{data.allMarkdownRemark.edges.map( x => {
@@ -54,7 +64,7 @@ const IntroText__box = styled.section`
               )
             })}</h2> */}
           </IntroText__box>
-        </section>
+        </IndexSection>
       </Layout>
   )
 }

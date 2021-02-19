@@ -52,13 +52,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     header {
-        
         padding: 2rem 0 3rem;
-        grid-area: head;
     }
     
     footer {
-        
         margin-top: auto;
     }
 `
