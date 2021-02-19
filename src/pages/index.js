@@ -7,8 +7,9 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
-const IntroText__box = styled.div`
+const IntroText__box = styled.section`
   width: 60%;
+  margin-top: 4rem;
   h1 {
     font-family: Open Sans, sans-serif;
     font-weight: 100;
@@ -44,14 +45,14 @@ const IntroText__box = styled.div`
         <section className="intro">
           <IntroText__box>
             <h1>{data.site.siteMetadata.description}</h1>
-            <h2>{data.allMarkdownRemark.edges.map( x => {
+            {/* <h2>{data.allMarkdownRemark.edges.map( x => {
               return (
                 <Link to={`${x.node.frontmatter.slug}`}>
                   <h2>{x.node.frontmatter.title}</h2>
                   <p>{x.node.frontmatter.date}</p>
                 </Link>
               )
-            })}</h2>
+            })}</h2> */}
           </IntroText__box>
         </section>
       </Layout>

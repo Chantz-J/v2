@@ -56,18 +56,9 @@ const GlobalStyle = createGlobalStyle`
         padding: 2rem 0 3rem;
         grid-area: head;
     }
-    section {
-        margin-top: 2rem;
-        padding: 60px 0;
-        border-bottom: 1px solid var(--off-white);
-
-        .intro-Text {
-            font-size: 2rem;
-        }
-        
-    }
+    
     footer {
-        margin-top: 3rem;
+        
         margin-top: auto;
     }
 `
