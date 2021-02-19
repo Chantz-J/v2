@@ -16,6 +16,7 @@ const Blog = () => {
       ) {
         edges {
           node {
+            id
             title
             slug
             publishedDate (formatString: "MMMM Do, YYYY")
@@ -31,7 +32,7 @@ const Blog = () => {
             <ol>
               {data.allContentfulBlogPost.edges.map(x => {
                 return (
-                  <li>
+                  <li key={x.node.id}>
                     <Link to={`${x.node.slug}`}>
                       <h2>{x.node.title}</h2>
                       <p>{x.node.publishedDate}</p>
