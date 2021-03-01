@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 import Header from './header'
 import Footer from './footer'
-import Sidenav from './sidenav'
-import Rightbar from './rightbar'
+
 
 import GlobalStyle from '../styles/globalStyles'
 import "fontsource-open-sans/300.css"
@@ -17,10 +16,10 @@ const Root = styled.div`
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: 
-    "one two two two two two two two two two three"
-    "one two two two two two two two two two three"
-    "one two two two two two two two two two three"
-    "one two two two two two two two two two three";
+    ". two two two two two two two two two ."
+    ". two two two two two two two two two ."
+    ". two two two two two two two two two ."
+    ". two two two two two two two two two .";
     grid-gap: 10px;
 
      .demo{
@@ -40,7 +39,7 @@ const Root = styled.div`
          "two"
          "two"
          "two"
-         "one";
+         ".";
      }
 `
 
@@ -53,8 +52,6 @@ const GlobalLayout = styled.div`
 const Layout = (props) => {
     return (
         <Root>
-            <Sidenav />
-            <Rightbar />
             <GlobalLayout>
             <GlobalStyle />
                  <Header />

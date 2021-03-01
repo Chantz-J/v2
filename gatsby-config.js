@@ -6,6 +6,9 @@ module.exports = {
    description: `I'm a web developer based in Tampa, FL specializing in 
    building 🤠 exceptional websites, applications,
    and everything in between.`,
+   synopsis: `A web developer thats enjoys creating things that 
+   live on the internet. And a goal to build products
+    that provide pixel-perfect, performance.`,
    siteURL: '',
    email: 'johnson.chantz@gmail.com',
    github: 'https://github.com/Chantz-J',
