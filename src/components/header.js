@@ -2,30 +2,44 @@ import React, { useState } from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
-import Arrow from '../icons/arrow'
 
-const StyledButton = styled.button`
-    background-color: var(--white);
-    width: 2.7rem;
-    border-radius: 13px;
-    outline: none;
-    border: none;
-    color: var(--white);
-    transition: ease-in-out .2s;
-    &:hover {
-        border: 1px solid var(--dark);
-        transition: ease-in-out .2s;
+
+const StyledNav = styled.nav`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        li {
+            
+            text-decoration: none; 
+            font-size: .9rem;
+            margin-right: 1.3rem;
+            a {
+                text-decoration: none;
+                color: ${props => props.theme.colors.textColor};
+            }
+        }
     }
+
 `
 
 export default function Header(){
-    const [toggle, setToggle] = useState(false)
-    const [visible , setVisible] = useState('none')
+    
+    // const [toggle, setToggle] = useState(false)
+    // const [visible , setVisible] = useState('none')
 
-    const handleClick = () => {
-        setToggle(!toggle)
-        setVisible(toggle === false ? 'none' : 'block') 
-    }
+    // const handleClick = () => {
+    //     setToggle(!toggle)
+    //     setVisible(toggle === false ? 'none' : 'block') 
+    // }
+    
+
+
+    
 
     const data = useStaticQuery(graphql`
         query {
@@ -43,10 +57,11 @@ export default function Header(){
 
    
     return (
-        <header>
-            <nav>
-                <h2><Link to='/'>{data.site.siteMetadata.title}</Link></h2>
-                <div>
+        <header >
+           
+            
+            <StyledNav>
+                {/* <div>
                     <StyledButton onClick={handleClick}>
                        <Arrow />
                     </StyledButton>
@@ -65,8 +80,8 @@ export default function Header(){
                     </div>
 
 
-                </div>
-                {/* <ul>
+                </div> */}
+                <ul>
                     {
                         data.site.siteMetadata.menuLinks.map(link => {
                             return (
@@ -77,8 +92,8 @@ export default function Header(){
                         })
                     }
 
-                </ul> */}
-            </nav>
+                </ul>
+            </StyledNav>
         </header>
     )
 }

@@ -1,64 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 import Header from './header'
 import Footer from './footer'
 
-
+import theme from '../styles/theme'
 import GlobalStyle from '../styles/globalStyles'
 import "fontsource-open-sans/300.css"
 
+import useDarkMode from 'use-dark-mode'
+import DarkModeToggle from 'react-dark-mode-toggle'
 
-const Root = styled.div`
-    font-family: "Open Sans";
-    display: grid;
-    height: 100vh;
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: 
-    ". two two two two two two two two two ."
-    ". two two two two two two two two two ."
-    ". two two two two two two two two two ."
-    ". two two two two two two two two two .";
-    grid-gap: 10px;
+import getTheme from '../styles/theme'
 
-     .demo{
-        grid-area: two;
-        background: grey;
-     }
-     
-     @media only screen and (max-width: 550px){
-         grid-template-columns: 1fr;
-         grid-template-rows: repeat(9, 1fr);
-         grid-template-areas: 
-         "two"
-         "two"
-         "two"
-         "two"
-         "two"
-         "two"
-         "two"
-         "two"
-         ".";
-     }
-`
-
-const GlobalLayout = styled.div`
-    grid-area: two;
-    display: flex;
-    flex-direction: column;
-`
 
 const Layout = (props) => {
+
+    const darkMode = useDarkMode(false);
+    const theme = getTheme(darkMode.value ? 'dark' : 'light')
+
     return (
-        <Root>
-            <GlobalLayout>
-            <GlobalStyle />
-                 <Header />
-                 {props.children}
-                <Footer />
-            </GlobalLayout>
-        </Root>
+            <ThemeProvider theme={theme}>
+                <GlobalLayout>
+                    <GlobalStyle />
+                    <Header />
+                    <DarkModeToggle
+                onChange={darkMode.toggle}
+                checked={darkMode.value}
+                size={70}
+            />
+                    {props.children}
+                     <Footer />
+                </GlobalLayout>
+            </ThemeProvider>
     )
 }
 export default Layout
+
+
+//STYLES
+const GlobalLayout = styled.div`
+    color: ${props => props.theme.colors.textColor};
+    background-color: ${props => props.theme.colors.background};
+    font-family: 'Open Sans', sans-serif;
+    padding: 1rem 15rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom:60px;
+    min-height: 100vh;
+`
