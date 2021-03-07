@@ -33,17 +33,17 @@ export default function Hero() {
         <section className="hero" style={{display: 'flex', flexDirection: 'column'}}>
           <HeroDiv>
             <section className="intro">
-              <h1>{data.site.siteMetadata.description}</h1>
-              <ContactLink to='/contact'>Hello</ContactLink>
+              <h1 style={{marginBottom: '1.2rem'}}>{data.site.siteMetadata.description}</h1>
+              <ContactLink to='/contact'>Say Hello</ContactLink>
             </section>
           </HeroDiv>
           <SmallMenu>
             <section className="mini-nav">
               <ul className="nav-links">
-                <ol className="link"><h3>Hello</h3></ol>
-                <ol className="link"><h3>—Hello</h3></ol>
+                <ol className="link"><h3>Contact</h3></ol>
+                <ol className="link"><h3>—Blog</h3></ol>
               </ul>
-            </section>
+            </section> 
           </SmallMenu>
         </section>
     )
@@ -51,12 +51,19 @@ export default function Hero() {
 
 //STYLES
 const ContactLink = styled(Link)`
+  padding: 1.3rem;
   text-decoration: none;
-  color: ${props => props.theme.colors.textColor}
+  color: ${props => props.theme.colors.textColor};
+  border-left: 2px solid ${props => props.theme.colors.border};
+  background-color: ${props => props.theme.colors.shade};
+  transition: ease-in-out .2s;
+  &:hover {
+    opacity: 0.5;
+  }
 `
 
 const HeroDiv = styled.div`
-  border: 1px solid black;
+  
   min-height: 47vh;
   display: flex;
   align-items: flex-end;
@@ -74,7 +81,7 @@ const HeroDiv = styled.div`
 `
 
 const SmallMenu = styled.div`
-  border: 1px solid black;
+  
   display: flex;
   align-items: center;
   justify-content: flex-end;
