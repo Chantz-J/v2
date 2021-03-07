@@ -21,9 +21,9 @@ export default function Project () {
         `}
         render={data => (
         <Layout>
-            <Head />
+            <Head title={data.markdownRemark.frontmatter.title}/>
             <section className="project-container">
-                <div className="project">
+                <div className="project" key={data.markdownRemark.frontmatter.slug}>
                     <h2>{data.markdownRemark.frontmatter.title}</h2>
                     <p>{data.markdownRemark.frontmatter.date}</p>
                     <div

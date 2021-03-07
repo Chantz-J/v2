@@ -1,10 +1,10 @@
 import React from "react"
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
 import Hero from './sections/heroSec'
+import Projects from './sections/projectSec'
 
 
 
@@ -17,6 +17,7 @@ export default function Index (){
         <Head title="Home"/>
         <StyledMain>
           <Hero />
+          <Projects />
         </StyledMain>
       </Layout>
   )
