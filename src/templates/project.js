@@ -23,7 +23,7 @@ export default function Project () {
         <Layout>
             <Head title={data.markdownRemark.frontmatter.title}/>
             <section className="project-container">
-                <div className="project" key={data.markdownRemark.frontmatter.slug}>
+                <div className="project">
                     <h2>{data.markdownRemark.frontmatter.title}</h2>
                     <p>{data.markdownRemark.frontmatter.date}</p>
                     <div

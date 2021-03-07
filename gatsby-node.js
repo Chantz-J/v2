@@ -3,7 +3,7 @@ const path = require('path') //Built in node module
 exports.createPages = async({ actions, graphql, reporter }) => {
     const { createPage } = actions
     const blogPostTemplate = path.resolve(`./src/templates/blog.js`)
-    const projectTemplate = require.resolve(`./src/templates/project.js`)
+    const projectTemplate = path.resolve(`./src/templates/project.js`)
 
     const result = await graphql(`
         query {

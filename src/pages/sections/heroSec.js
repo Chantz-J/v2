@@ -54,7 +54,7 @@ const ContactLink = styled(Link)`
   padding: 1.3rem;
   text-decoration: none;
   color: ${props => props.theme.colors.textColor};
-  border-left: 2px solid ${props => props.theme.colors.border};
+  border-left: 1px solid ${props => props.theme.colors.border};
   background-color: ${props => props.theme.colors.shade};
   transition: ease-in-out .2s;
   &:hover {
@@ -86,6 +86,7 @@ const SmallMenu = styled.div`
   align-items: center;
   justify-content: flex-end;
   text-orientation: sideways;
+  margin-bottom: 2rem;
   .mini-nav {
     
     .nav-links {

@@ -8,10 +8,14 @@ export default function Projects(){
         allMarkdownRemark {
           edges {
             node {
+              html
               frontmatter {
                 title 
                 date
                 slug
+                preview {
+                    publicURL
+                }
               }
             }
           }
@@ -24,6 +28,7 @@ export default function Projects(){
                data.allMarkdownRemark.edges.map(project => {
                    return(
                        <Link to={project.node.frontmatter.slug}>
+                            <img src={project.node.frontmatter.preview.publicURL} style={{width: '100%'}}/>
                             <h4>{project.node.frontmatter.title}</h4>
                             <h4>{project.node.frontmatter.date}</h4>
                             <br></br>
