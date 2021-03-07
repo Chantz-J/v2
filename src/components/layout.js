@@ -15,7 +15,7 @@ import DarkModeToggle from 'react-dark-mode-toggle'
 import getTheme from '../styles/theme'
 
 
-const Layout = (props) => {
+export default function Layout(props) {
 
     const darkMode = useDarkMode(false);
     const theme = getTheme(darkMode.value ? 'dark' : 'light')
@@ -26,17 +26,17 @@ const Layout = (props) => {
                     <GlobalStyle />
                     <Header />
                     <DarkModeToggle
-                onChange={darkMode.toggle}
-                checked={darkMode.value}
-                size={70}
-            />
+                        onChange={darkMode.toggle}
+                        checked={darkMode.value}
+                        size={70}
+                    />
                     {props.children}
                      <Footer />
                 </GlobalLayout>
             </ThemeProvider>
     )
 }
-export default Layout
+
 
 
 //STYLES
@@ -44,7 +44,7 @@ const GlobalLayout = styled.div`
     color: ${props => props.theme.colors.textColor};
     background-color: ${props => props.theme.colors.background};
     font-family: 'Open Sans', sans-serif;
-    padding: 1rem 15rem;
+    padding: 1rem 15%;
     display: flex;
     flex-direction: column;
     padding-bottom:60px;

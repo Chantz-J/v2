@@ -3,7 +3,7 @@ module.exports = {
  siteMetadata: {
    title: 'Chantz Johnson',
    author: 'Chantz Johnson',
-   description: `I'm a web developer based in Tampa, FL specializing in 
+   description: `I'm Chantz, a web developer specializing in 
    building 🤠 exceptional websites, applications,
    and everything in between.`,
    synopsis: `A web developer thats enjoys creating things that 

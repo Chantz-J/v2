@@ -17,6 +17,7 @@
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "fontsource-open-sans": "^4.0.0",
     "fontsource-roboto": "^4.0.0",
+    "fontsource-zilla-slab": "^4.0.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sharp": "^2.14.0",

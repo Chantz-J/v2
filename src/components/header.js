@@ -28,19 +28,6 @@ const StyledNav = styled.nav`
 `
 
 export default function Header(){
-    
-    // const [toggle, setToggle] = useState(false)
-    // const [visible , setVisible] = useState('none')
-
-    // const handleClick = () => {
-    //     setToggle(!toggle)
-    //     setVisible(toggle === false ? 'none' : 'block') 
-    // }
-    
-
-
-    
-
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -54,33 +41,12 @@ export default function Header(){
             }
         }
     `)
-
-   
     return (
         <header >
            
             
             <StyledNav>
-                {/* <div>
-                    <StyledButton onClick={handleClick}>
-                       <Arrow />
-                    </StyledButton>
-                    <div style={{display: visible}}>
-                        <ul>
-                        {
-                            data.site.siteMetadata.menuLinks.map(link => {
-                                return (
-                                    <li key={link.name}>
-                                        <Link to={link.link}>{link.name}</Link>
-                                    </li>
-                                )
-                            })
-                        }
-                        </ul>
-                    </div>
-
-
-                </div> */}
+                
                 <ul>
                     {
                         data.site.siteMetadata.menuLinks.map(link => {
