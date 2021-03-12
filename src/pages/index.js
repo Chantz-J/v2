@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
-import Hero from './sections/heroSec'
-import Projects from './sections/projectSec'
+import Hero from '../components/sections/heroSec'
+import Projects from '../components/sections/projectSec'
 
 
 

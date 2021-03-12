@@ -9,31 +9,22 @@ import theme from '../styles/theme'
 import GlobalStyle from '../styles/globalStyles'
 import "fontsource-open-sans/300.css"
 
-import useDarkMode from 'use-dark-mode'
-import DarkModeToggle from 'react-dark-mode-toggle'
 
-import getTheme from '../styles/theme'
+
+
 
 
 export default function Layout(props) {
-
-    const darkMode = useDarkMode(false);
-    const theme = getTheme(darkMode.value ? 'dark' : 'light')
 
     return (
             <ThemeProvider theme={theme}>
                 <GlobalLayout>
                     <GlobalStyle />
                     <Header />
-                    <DarkModeToggle
-                        onChange={darkMode.toggle}
-                        checked={darkMode.value}
-                        size={70}
-                    />
-                    {props.children}
+                        {props.children}
                      <Footer />
                 </GlobalLayout>
-            </ThemeProvider>
+             </ThemeProvider>
     )
 }
 
@@ -41,8 +32,6 @@ export default function Layout(props) {
 
 //STYLES
 const GlobalLayout = styled.div`
-    color: ${props => props.theme.colors.textColor};
-    background-color: ${props => props.theme.colors.background};
     font-family: 'Open Sans', sans-serif;
     padding: 1rem 15%;
     display: flex;

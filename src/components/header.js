@@ -20,7 +20,6 @@ const StyledNav = styled.nav`
             margin-right: 1.3rem;
             a {
                 text-decoration: none;
-                color: ${props => props.theme.colors.textColor};
             }
         }
     }
