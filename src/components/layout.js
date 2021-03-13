@@ -33,9 +33,7 @@ export default function Layout(props) {
 //STYLES
 const GlobalLayout = styled.div`
     font-family: 'Open Sans', sans-serif;
-    padding: 1rem 15%;
     display: flex;
     flex-direction: column;
-    padding-bottom:60px;
     min-height: 100vh;
 `

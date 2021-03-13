@@ -2,6 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
+const StyledHero = styled.section`
+  
+  padding: 3rem;
+  h1 {
+    a {
+      text-decoration: none;
+    }
+    
+  }
+`
+
 
 export default function Hero() {
     const data = useStaticQuery(graphql`
@@ -10,7 +21,6 @@ export default function Hero() {
             siteMetadata {
                 author
                 description
-                synopsis
                 menuLinks {
                   name
                   link
@@ -32,23 +42,21 @@ export default function Hero() {
   `)
     return (
         <StyledHero>
-          <h6>Good Evening!</h6>
-          <h1><Link to='/'>I'm {data.site.siteMetadata.author}</Link></h1>
+          <div className="container">
+            <div className="row">
+              <h2>
+                <div className="line">
+                  <span>{data.site.siteMetaData.description}</span>
+                </div>
+              </h2>
+            </div>
+          </div>
         </StyledHero>
     )
 }
 
 //STYLES
-const StyledHero = styled.section`
-  
-  padding: 3rem;
-  h1 {
-    a {
-      text-decoration: none;
-    }
-    
-  }
-`
+
 
 
 

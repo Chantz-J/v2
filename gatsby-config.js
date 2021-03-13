@@ -4,11 +4,8 @@ module.exports = {
    title: 'Chantz Johnson',
    author: 'Chantz Johnson',
    description: `I'm Chantz, a web developer specializing in 
-   building 🤠 exceptional websites, applications,
+   building exceptional websites, applications,
    and everything in between.`,
-   synopsis: `A web developer thats enjoys creating things that 
-   live on the internet. And a goal to build products
-    that provide pixel-perfect, performance.`,
    siteURL: '',
    email: 'johnson.chantz@gmail.com',
    github: 'https://github.com/Chantz-J',
@@ -33,7 +30,18 @@ module.exports = {
       link: '/contact'
     },
   
+   ],
+   lineSpans: [
+     {
+       text: "Hi there, I'm Chantz",
+       id: 1
+     },
+     {
+      text: " and I'm a Web Developer",
+      id: 2
+    }
    ]
+   
 
 
 

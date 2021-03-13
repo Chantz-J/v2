@@ -16,7 +16,7 @@ export default function Index (){
       <Layout>
         <Head title="Home"/>
         <StyledMain>
-          <Hero />
+          {/* <Hero /> */}
           <Projects />
         </StyledMain>
       </Layout>
