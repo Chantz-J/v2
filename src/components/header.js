@@ -3,65 +3,46 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
 
-
 const StyledHeader = styled.header`
-    position: fixed;
-    width: 100%;
-    height: 128px;
-    z-index: 4;
+    margin-left: 160px;
+    background-color:  ${props => props.theme.colors.dark};
+    color: ${props => props.theme.colors.primary};
+    width: 100%
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    ${mediaQueries.phone`
-        height: 96px;
-  `}
-`
-const StyledNav = styled.nav`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     
-    ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        li {
+    h3 {
+        padding-left: 9rem;
+        letter-spacing: .3rem;
+        a {
+            text-decoration: none;
+            color: ${props => props.theme.colors.tertiary};
+            font-family: ${props => props.theme.fonts.head};
             
-            text-decoration: none; 
-            font-size: .9rem;
-            margin-right: 1.3rem;
-            a {
-                text-decoration: none;
+        }
+    }
+    .nav_links {
+        padding: .8rem 4rem;
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                font-family: ${props => props.theme.fonts.head};
+                font-weight: 600;
+                padding: 2rem;
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    color: ${props => props.theme.colors.secondary};
+                }
             }
         }
     }
-
-    span {
-
-    }
 `
 
-const Navbar = styled.nav`
-    width: 25px;
-    ${mediaQueries.phone`
-        width: 10px;
-    `},
-    span {
-        margin-bottom: .3rem;
-        background: ${props => props.theme.colors.dark};
-        height: 2px;
-        display: block;
-    }
-`
-
-const LogoLink = styled(Link)`
-    margin-left: 3rem;
-    font-size: 1.2rem;
-    letter-spacing: .5rem;
-    color: ${props => props.theme.colors.dark};
-    text-decoration: none;
-    font-weight: 700;
-`
 
 export default function Header(){
     const data = useStaticQuery(graphql`
@@ -79,13 +60,8 @@ export default function Header(){
     `)
     return (
         <StyledHeader>
-            <LogoLink to='/'>CHANTZ.</LogoLink>
-            <Navbar style={{marginRight: '3rem'}}>
-                <span></span>
-                <span></span>
-            </Navbar>
-            {/* <StyledNav>
-
+            {/* <h3><Link to='/'>{data.site.siteMetadata.title}</Link></h3> */}
+            <nav className='nav_links'>
                 <ul>
                     {
                         data.site.siteMetadata.menuLinks.map(link => {
@@ -98,7 +74,7 @@ export default function Header(){
                     }
 
                 </ul>
-            </StyledNav> */}
-        </StyledHeader>
+            </nav>
+        </StyledHeader>   
     )
 }

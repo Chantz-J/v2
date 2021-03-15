@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "fontsource-ibm-plex-mono": "^4.0.0",
     "fontsource-open-sans": "^4.0.0",
     "fontsource-roboto": "^4.0.0",
     "fontsource-zilla-slab": "^4.0.0",

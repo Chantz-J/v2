@@ -4,14 +4,12 @@ import { ThemeProvider } from 'styled-components'
 
 import Header from './header'
 import Footer from './footer'
+import Sidebar from './sidebar'
 
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/globalStyles'
-import "fontsource-open-sans/300.css"
-
-
-
-
+import "fontsource-open-sans"
+import "fontsource-ibm-plex-mono"
 
 
 export default function Layout(props) {
@@ -20,6 +18,7 @@ export default function Layout(props) {
             <ThemeProvider theme={theme}>
                 <GlobalLayout>
                     <GlobalStyle />
+                    <Sidebar />
                     <Header />
                         {props.children}
                      <Footer />
@@ -32,7 +31,7 @@ export default function Layout(props) {
 
 //STYLES
 const GlobalLayout = styled.div`
-    font-family: 'Open Sans', sans-serif;
+    background: ${props => props.theme.colors.dark};
     display: flex;
     flex-direction: column;
     min-height: 100vh;

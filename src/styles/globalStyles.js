@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import mediaQueries from './breakpoints'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -8,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         
     }
     * {
+        font-size: 100%;
         padding: 0;
         margin: 0;
         &:before {
@@ -19,10 +21,24 @@ const GlobalStyle = createGlobalStyle`
     }
     
     ::selection {
-        background-color: #e9e9e9;
-        color: #fff;
+        background-color: ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.dark};
     }
-    
+    ::-webkit-scrollbar {
+        width: 20px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: ${props => props.theme.colors.dark};
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: ${props => props.theme.colors.tertiary};
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+        &:hover {
+            background-color: ${props => props.theme.colors.secondary}
+        }
+      }
     footer {
         margin-top: auto;
     }

@@ -1,8 +1,9 @@
 ---
 slug: "/projects/my-first-post"
-date: "2019-05-04"
+date: "2021"
 title: "Featured Project"
 preview: './img/streets.jpg'
+summary: A brief summary of the project. List technology, workflow, and anything else here.
 ---
 
 ####![Empty road, rainy, gloomy day](./img/streets.jpg)

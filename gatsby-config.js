@@ -1,7 +1,7 @@
 
 module.exports = {
  siteMetadata: {
-   title: 'Chantz Johnson',
+   title: 'Chantz',
    author: 'Chantz Johnson',
    description: `I'm Chantz, a web developer specializing in 
    building exceptional websites, applications,
