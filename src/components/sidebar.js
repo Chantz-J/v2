@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import mediaQueries from '../styles/breakpoints'
 import Logo from '../icons/logo'
 
 
@@ -18,6 +19,9 @@ const Side = styled.aside`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  ${mediaQueries.tablet`
+      display: none;
+   `}
 
   .sideways {
       height: 200px;

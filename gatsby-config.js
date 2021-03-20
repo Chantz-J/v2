@@ -7,6 +7,7 @@ module.exports = {
    building exceptional websites, applications,
    and everything in between.`,
    siteURL: '',
+   end: 'A front-end software engineer focused on pixel-perfect, performance.',
    email: 'johnson.chantz@gmail.com',
    github: 'https://github.com/Chantz-J',
    linkedIn: 'https://www.linkedin.com/in/chantz-j-603034206/',
@@ -31,19 +32,7 @@ module.exports = {
     },
   
    ],
-   lineSpans: [
-     {
-       text: "Hi there, I'm Chantz",
-       id: 1
-     },
-     {
-      text: " and I'm a Web Developer",
-      id: 2
-    }
-   ]
    
-
-
 
  },
   plugins: [

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import styled from 'styled-components'
+import mediaQueries from '../styles/breakpoints'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
@@ -11,6 +12,9 @@ import Blogs from '../components/sections/blogSec'
 
 const StyledMain = styled.main`
   margin-left: 160px;
+  ${mediaQueries.phablet`
+    margin-left: 0;
+   `}
 `
 
 export default function Index (){

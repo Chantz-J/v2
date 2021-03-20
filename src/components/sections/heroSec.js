@@ -11,12 +11,24 @@ const StyledHero = styled.section`
    display: flex;
    align-items: center;
    justify-content: center;
+   ${mediaQueries.desktop_medium`
+      padding: 0 5rem;
+   `}
    ${mediaQueries.desktop`
       flex-direction: column;
+      padding: 0 3rem;
    `}
+   ${mediaQueries.tablet`
+      padding: 0 1rem;
+    `}
+    ${mediaQueries.phablet`
+      padding: 1rem;
+    `}
+    
 
 
    .wrapper { 
+     
       padding-bottom: .5rem;
       background: ${props => props.theme.gradients.second};
    }
@@ -36,6 +48,9 @@ const StyledHero = styled.section`
       `};
       ${mediaQueries.desktop`
      font-size: 2rem;
+      `};
+      ${mediaQueries.phablet`
+     font-size: 1.5rem;
       `};
 
      h1 {
@@ -71,10 +86,6 @@ export default function Hero() {
                 menuLinks {
                   name
                   link
-                }
-                lineSpans {
-                  text
-                  id
                 }
             }
         }

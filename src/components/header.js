@@ -3,15 +3,32 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
 
+import gsap from 'gsap'
+
+const Nav = styled.nav` 
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+
+        button {
+            align-self: flex-end;
+            width: 40px;
+        }
+
+`
 const StyledHeader = styled.header`
+    
     margin-left: 160px;
     background-color:  ${props => props.theme.colors.dark};
     color: ${props => props.theme.colors.primary};
     width: 100%
-    height: 30px;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    ${mediaQueries.tablet`
+    margin-left: 0;
+    `}
     
     h3 {
         padding-left: 9rem;
@@ -24,10 +41,11 @@ const StyledHeader = styled.header`
         }
     }
     .nav_links {
-        padding: .8rem 4rem;
+        
         ul {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-end;
 
             li {
                 font-family: ${props => props.theme.fonts.head};
@@ -36,7 +54,7 @@ const StyledHeader = styled.header`
                 list-style: none;
                 a {
                     text-decoration: none;
-                    color: ${props => props.theme.colors.secondary};
+                    color: ${props => props.theme.colors.dark};
                 }
             }
         }
@@ -45,6 +63,10 @@ const StyledHeader = styled.header`
 
 
 export default function Header(){
+    const [nav, setNav] = useState(false)
+
+    gsap.to("header", {duration: 3, backgroundColor: '#e5e5e5'} )
+
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -59,22 +81,24 @@ export default function Header(){
         }
     `)
     return (
-        <StyledHeader>
-            {/* <h3><Link to='/'>{data.site.siteMetadata.title}</Link></h3> */}
+        <Nav>
+            <StyledHeader >
             <nav className='nav_links'>
                 <ul>
                     {
                         data.site.siteMetadata.menuLinks.map(link => {
                             return (
-                                <li key={link.name}>
+                                <li key={link.name} style={{display: nav ? 'block' : 'none'}} >
                                      <Link to={link.link}>{link.name}</Link>
                                 </li>
                             )
                         })
                     }
-
+                    
                 </ul>
             </nav>
-        </StyledHeader>   
+            </StyledHeader> 
+            <button onClick={() => setNav(!nav)}>TEST</button>
+        </Nav>
     )
 }

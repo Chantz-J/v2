@@ -27,9 +27,6 @@ export default function Layout(props) {
     )
 }
 
-
-
-//STYLES
 const GlobalLayout = styled.div`
     background: ${props => props.theme.colors.dark};
     display: flex;
