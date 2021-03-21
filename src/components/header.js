@@ -90,15 +90,6 @@ const StyledHeader = styled.header`
 
 export default function Header(){
     const [nav, setNav] = useState(false)
-
-
-
-
-
-
-
-
-
     const data = useStaticQuery(graphql`
         query {
             site {
