@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
  
+import { Pivot as Hamburger } from 'hamburger-react'
 
 const Nav = styled.nav` 
     display: flex;
@@ -13,7 +14,6 @@ const Nav = styled.nav`
             margin: 20px;
             align-self: flex-end;
             transition: all .5s ease-in-out;
-            border: 3px solid white;
             width: 80px;
             height: 60px;
             color: ${props => props.theme.colors.secondary};
@@ -21,7 +21,7 @@ const Nav = styled.nav`
             display: flex;
             align-items: center;
             justify-content: center;
-            
+            border: none;
             
             }
         }
@@ -62,15 +62,25 @@ const StyledHeader = styled.header`
             background: ${props => props.theme.colors.dark};
 
             li {
-                
                 font-family: ${props => props.theme.fonts.head};
                 font-weight: 600;
                 padding: 2rem;
                 list-style: none;
+
+               
+
+                
                 a {
                     text-decoration: none;
+                    transition: 0.25s ease-in-out;
                     color: ${props => props.theme.colors.secondary};
                     font-size: 2.5rem;
+
+                    &:hover {
+                        text-decoration: line-through;
+                        color: ${props => props.theme.colors.tertiary};
+                    }
+
                 }
             }
         }
@@ -120,8 +130,11 @@ export default function Header(){
                 </ul>
             </nav>
             </StyledHeader> 
-            <button className="button" onClick={() => setNav(!nav)}>
-                Menu
+            <button className="button" >
+                <Hamburger 
+                    toggled={nav} 
+                    toggle={() => setNav(!nav)}
+                />
             </button>
             
         </Nav> 
