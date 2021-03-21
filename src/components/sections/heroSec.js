@@ -25,12 +25,9 @@ const StyledHero = styled.section`
       padding: 1rem;
     `}
     
-
-
    .wrapper { 
      
       padding-bottom: .5rem;
-      background: ${props => props.theme.gradients.second};
    }
    .container {
      background: ${props => props.theme.colors.dark};
@@ -107,14 +104,10 @@ export default function Hero() {
           <div className="wrapper">
             <div className="name-box container">
                 <h1>
-                  {/* <p style={{color: '#fff'}}>Chantz</p> */}
                   <p style={{textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff'}}>{data.site.siteMetadata.description}</p>
                 </h1>
             </div>
           </div>
-          {/* <div className="description container">
-              <p>{data.site.siteMetadata.description}</p>
-          </div> */}
         </StyledHero>
     )
 }

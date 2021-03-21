@@ -2,22 +2,33 @@ import React, { useState } from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
-
-import gsap from 'gsap'
+ 
 
 const Nav = styled.nav` 
-    border: 1px solid white;
     display: flex;
     flex-direction: column;
+    background: ${props => props.theme.colors.dark};
 
-        button {
+        .button {
+            margin: 20px;
             align-self: flex-end;
-            width: 40px;
+            transition: all .5s ease-in-out;
+            border: 3px solid white;
+            width: 80px;
+            height: 60px;
+            color: ${props => props.theme.colors.secondary};
+            background: ${props => props.theme.colors.dark};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+            }
         }
 
 `
 const StyledHeader = styled.header`
-    
+    transition: 0.25s ease-in-out;
     margin-left: 160px;
     background-color:  ${props => props.theme.colors.dark};
     color: ${props => props.theme.colors.primary};
@@ -43,18 +54,23 @@ const StyledHeader = styled.header`
     .nav_links {
         
         ul {
+            padding-top: 70px;
+            transition: 0.25s ease-in-out;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            background: ${props => props.theme.colors.dark};
 
             li {
+                
                 font-family: ${props => props.theme.fonts.head};
                 font-weight: 600;
                 padding: 2rem;
                 list-style: none;
                 a {
                     text-decoration: none;
-                    color: ${props => props.theme.colors.dark};
+                    color: ${props => props.theme.colors.secondary};
+                    font-size: 2.5rem;
                 }
             }
         }
@@ -65,7 +81,13 @@ const StyledHeader = styled.header`
 export default function Header(){
     const [nav, setNav] = useState(false)
 
-    gsap.to("header", {duration: 3, backgroundColor: '#e5e5e5'} )
+
+
+
+
+
+
+
 
     const data = useStaticQuery(graphql`
         query {
@@ -82,13 +104,13 @@ export default function Header(){
     `)
     return (
         <Nav>
-            <StyledHeader >
-            <nav className='nav_links'>
+            <StyledHeader id="reveal" style={{height: nav ? "57vh" : "0"}}>
+            <nav className='nav_links' >
                 <ul>
                     {
                         data.site.siteMetadata.menuLinks.map(link => {
                             return (
-                                <li key={link.name} style={{display: nav ? 'block' : 'none'}} >
+                                <li key={link.name}  >
                                      <Link to={link.link}>{link.name}</Link>
                                 </li>
                             )
@@ -98,7 +120,10 @@ export default function Header(){
                 </ul>
             </nav>
             </StyledHeader> 
-            <button onClick={() => setNav(!nav)}>TEST</button>
-        </Nav>
+            <button className="button" onClick={() => setNav(!nav)}>
+                Menu
+            </button>
+            
+        </Nav> 
     )
 }
