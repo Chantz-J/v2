@@ -72,12 +72,7 @@ module.exports = {
             },
           },
         ],
-        // commonmark: true,
-        // footnotes: true,
-        // pedantic: true,
-        // gfm: true,
-        // name: `src`,
-        // path: `${__dirname}/src/`,
+
       },
     },
     'gatsby-plugin-react-helmet'

@@ -35,10 +35,12 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 20px;
         border: 6px solid transparent;
         background-clip: content-box;
+
         &:hover {
-            background-color: ${props => props.theme.colors.secondary}
+            background: #fff;
         }
       }
+
     footer {
         margin-top: auto;
     }

@@ -24,7 +24,7 @@ export default function Index (){
         <StyledMain>
           <Hero />
           <Projects />
-          <Blogs />
+          {/* <Blogs /> */}
         </StyledMain>
       </Layout>
   )

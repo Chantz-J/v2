@@ -3,7 +3,8 @@
     primary: '#fff',
     secondary: '#e5e5e5',
     tertiary: '#3a3a3a',
-    dark: `#171717`
+    dark: `#171717`,
+    slighty_dark: `#2c353a`
   },
   gradients: {
     first: `linear-gradient(to bottom right, #FC575E, #90D5EC)`,

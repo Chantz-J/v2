@@ -9,7 +9,7 @@ const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     background: ${props => props.theme.colors.dark};
-
+    
         .button {
             margin: 20px;
             align-self: flex-end;
@@ -22,13 +22,16 @@ const Nav = styled.nav`
             align-items: center;
             justify-content: center;
             border: none;
-            
-            }
-        }
 
+            &:hover {
+                text-decoration: line-through;
+                background: ${props => props.theme.colors.slighty_dark};
+            }
+            
+        }
 `
 const StyledHeader = styled.header`
-    transition: 0.25s ease-in-out;
+    transition: 0.37s ease-in-out;
     margin-left: 160px;
     background-color:  ${props => props.theme.colors.dark};
     color: ${props => props.theme.colors.primary};
@@ -67,9 +70,6 @@ const StyledHeader = styled.header`
                 padding: 2rem;
                 list-style: none;
 
-               
-
-                
                 a {
                     text-decoration: none;
                     transition: 0.25s ease-in-out;
@@ -127,7 +127,6 @@ export default function Header(){
                     toggle={() => setNav(!nav)}
                 />
             </button>
-            
         </Nav> 
     )
 }

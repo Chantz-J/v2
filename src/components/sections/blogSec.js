@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const BlogContainer =  styled.section`
     display: flex;
+    flex-direction: column;
     background: ${props => props.theme.colors.dark};
     padding: 6rem 7rem;
     justify-content: space-evenly;

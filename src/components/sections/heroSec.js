@@ -56,7 +56,6 @@ const StyledHero = styled.section`
        font-family: ${props => props.theme.fonts.head};
        font-weight: bold;
        
-
      }
    }
    .description {

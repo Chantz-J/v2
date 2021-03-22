@@ -1,15 +1,20 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
+import ArrowUp from '../icons/ArrowUp'
 
 import mediaQueries from '../styles/breakpoints'
 
-// padding-right: 15rem;
-//     padding-left: 15rem;
+
 
 const StyledFooter = styled.footer`
-    min-height: 40vh;
+    padding: 0 1rem;
+    min-height: 13vh;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #3a3a3a;
+    background: ${props => props.theme.colors.dark};
     font-family: ${props => props.theme.fonts.head};
     color: ${props => props.theme.colors.secondary};
     margin-left: 160px;
@@ -17,27 +22,38 @@ const StyledFooter = styled.footer`
       margin-left: 0;
      `}
 
+     .copyright {
+         font-family: ${props => props.theme.fonts.body};
+         display: flex;
+         width: 13%;
+         display: flex;
+         justify-content: space-between;
+     }
 
-    .container {
-        padding: 1.7rem;
-        max-width: 340px;
+     .quick-contact {
+         font-family: ${props => props.theme.fonts.body};
+         display: flex;
+         justify-content: space-between;
+         width: 25%;
 
-        h3 {
+     }
+
+     button {
+        outline: none;
+        transition: 0.25s ease-in-out;
+        padding: .5rem;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 50px;
+        color: ${props => props.theme.colors.secondary};
+        background: ${props => props.theme.colors.dark};
+
+        &:hover {
+            cursor: pointer;
             color: ${props => props.theme.colors.dark};
-            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff;
-            font-size: 3rem;
+            background: ${props => props.theme.colors.secondary};
         }
-    }
-
-    .mini-nav {
-        h6 {
-            a {
-                text-decoration: none;
-                color: ${props => props.theme.colors.tertiary};
-        
-            }
-        }
-    }
+     }
     
 `
 
@@ -49,35 +65,42 @@ export default function Footer(){
                 siteMetadata {
                     author
                     end
-                    menuLinks {
-                        name
-                        link
-                      }
+                    email
                 }
             }
         }
     `)
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
+
     let today = new Date()
     let year = today.getFullYear()
     return (
            <StyledFooter>
-                <div className="container">
-                    <h3>{data.site.siteMetadata.end}</h3>
-                </div>
-                <div className="container mini-nav">
-                    <h2>Explore</h2>
-                    {
-                        data.site.siteMetadata.menuLinks.map(link => {
-                            return (
-                                <h6 key={link.name}>
-                                     <Link to={link.link}>{link.name}</Link>
-                                </h6>
-                            )
-                        })
-                    }
-                </div>
-                <div className="container"></div>
+               <div className="copyright">
+                    <h6>&copy; {data.site.siteMetadata.author}</h6>
+                    <p>{year}</p>
+               </div>
+               <div className="quick-contact">
+                   <div className="contact">
+                      <p>
+                        <a style={{color: '#e5e5e5'}} href={`mailto:${data.site.siteMetadata.email}`}>{data.site.siteMetadata.email}</a>
+                      </p>
+                      <p>+1(813)993-2504</p>
+                   </div>
+                   
+                   <button onClick={() => scrollToTop()}>
+                     <ArrowUp />
+                   </button>
+               </div>
+               
            </StyledFooter>
+               
     )
 }

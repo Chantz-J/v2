@@ -1,28 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import mediaQueries from '../styles/breakpoints'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-// export const query = graphql`
-// query (
-//     $slug: String!
-//   ) {
-//     markdownRemark(
-//       fields: {
-//         slug: {
-//           eq: $slug
-//         }
-//       }
-//     ) {
-//       frontmatter{
-//         title
-//         date
-//       }
-//       html
-//     }
-//   }
-// `
+
+const StyledMain = styled.main`
+  background: ${props => props.theme.colors.dark};
+  margin-left: 160px;
+  ${mediaQueries.phablet`
+    margin-left: 0;
+   `}
+`
+
 export const query = graphql`
   query($slug: String!){
     contentfulBlogPost(slug: {eq: $slug}) {
@@ -50,10 +42,12 @@ export default function Blog(props){
     return (
         <Layout>
           <Head title={props.data.contentfulBlogPost.title} />
-           <h1>{props.data.contentfulBlogPost.title}</h1>
-           <p>{props.data.contentfulBlogPost.publishedDate}</p>
-           <p>{props.data.contentfulBlogPost.updatedAt}</p>
-           {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+          <StyledMain>
+            <h1>{props.data.contentfulBlogPost.title}</h1>
+            <p>{props.data.contentfulBlogPost.publishedDate}</p>
+            <p>{props.data.contentfulBlogPost.updatedAt}</p>
+            {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+          </StyledMain>
         </Layout>
     )
 }
