@@ -5,8 +5,6 @@ import ArrowUp from '../icons/ArrowUp'
 
 import mediaQueries from '../styles/breakpoints'
 
-
-
 const StyledFooter = styled.footer`
     padding: 0 1rem;
     min-height: 13vh;
@@ -18,10 +16,17 @@ const StyledFooter = styled.footer`
     font-family: ${props => props.theme.fonts.head};
     color: ${props => props.theme.colors.secondary};
     margin-left: 160px;
+    ${mediaQueries.desktop_medium`
+        justify-content: space-evenly;
+    `}
     ${mediaQueries.phablet`
       margin-left: 0;
-     `}
-
+      padding: 1rem;
+    `}
+    ${mediaQueries.tablet`
+        flex-direction: column;
+    `}
+    
      .copyright {
          font-family: ${props => props.theme.fonts.body};
          display: flex;
@@ -35,6 +40,9 @@ const StyledFooter = styled.footer`
          display: flex;
          justify-content: space-between;
          width: 25%;
+         ${mediaQueries.desktop_medium`
+          flex-direction: column;
+        `}
 
      }
 
@@ -94,13 +102,10 @@ export default function Footer(){
                       </p>
                       <p>+1(813)993-2504</p>
                    </div>
-                   
                    <button onClick={() => scrollToTop()}>
                      <ArrowUp />
                    </button>
                </div>
-               
            </StyledFooter>
-               
     )
 }

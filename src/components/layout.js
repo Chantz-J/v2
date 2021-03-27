@@ -6,6 +6,7 @@ import Header from './header'
 import Footer from './footer'
 import Sidebar from './sidebar'
 
+
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/globalStyles'
 import "fontsource-open-sans"

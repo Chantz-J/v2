@@ -26,7 +26,6 @@ const StyledHero = styled.section`
     `}
     
    .wrapper { 
-     
       padding-bottom: .5rem;
    }
    .container {
@@ -34,9 +33,49 @@ const StyledHero = styled.section`
      padding-bottom: 3rem;
      width: 100%;
      display: flex;
+     flex-direction: column;
      align-items: center;
-     
+     justify-content: center;
+      
+     button {
+       cursor: pointer;
+       display: inline-block;
+       position: relative;
+       align-self: flex-start;
+       margin: 1.4rem 0;
+       color: ${props => props.theme.colors.secondary};
+       background: ${props => props.theme.colors.dark};
+       padding: .6rem;
+       font-size: 1rem;
+       border: none;
+       text-transform: uppercase;
+       letter-spacing: .4rem;
+       
+
+       ::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: ${props => props.theme.gradients.second};
+        transform-origin: bottom right;
+        transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+       }
+
+       &:hover {
+         ::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+         }
+       }
+      }
+       
    }
+
+
    .name-box {
   
      font-size: 4rem;
@@ -105,6 +144,7 @@ export default function Hero() {
                 <h1>
                   <p style={{textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff'}}>{data.site.siteMetadata.description}</p>
                 </h1>
+                <button>Resume</button>
             </div>
           </div>
         </StyledHero>

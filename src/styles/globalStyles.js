@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
         --dark: #282936;
         
     }
+
+
     * {
         font-size: 100%;
         padding: 0;
@@ -19,27 +21,33 @@ const GlobalStyle = createGlobalStyle`
             box-sizing: border-box;
         }
     }
-    
+
     ::selection {
-        background-color: ${props => props.theme.colors.primary};
+        background: ${props => props.theme.colors.primary};
         color: ${props => props.theme.colors.dark};
     }
+    
     ::-webkit-scrollbar {
-        width: 20px;
+        width: 10px;
       }
+      
+     
       ::-webkit-scrollbar-track {
-        background-color: ${props => props.theme.colors.dark};
+        background: ${props => props.theme.colors.dark};
       }
+      
+      
       ::-webkit-scrollbar-thumb {
-        background-color: ${props => props.theme.colors.tertiary};
-        border-radius: 20px;
-        border: 6px solid transparent;
-        background-clip: content-box;
-
+        background: ${props => props.theme.colors.tertiary};
+        border-radius: 34px;
+        
         &:hover {
-            background: #fff;
+            background: ${props => props.theme.colors.secondary};
         }
       }
+      
+      
+      
 
     footer {
         margin-top: auto;

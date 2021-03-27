@@ -10,6 +10,7 @@ const Nav = styled.nav`
     flex-direction: column;
     background: ${props => props.theme.colors.dark};
     
+    
         .button {
             margin: 20px;
             align-self: flex-end;
@@ -31,9 +32,8 @@ const Nav = styled.nav`
         }
 `
 const StyledHeader = styled.header`
-    transition: 0.37s ease-in-out;
+    transition: 0.30s ease-in-out;
     margin-left: 160px;
-    background-color:  ${props => props.theme.colors.dark};
     color: ${props => props.theme.colors.primary};
     width: 100%
     display: flex;
@@ -70,16 +70,17 @@ const StyledHeader = styled.header`
                 padding: 2rem;
                 list-style: none;
 
+
                 a {
                     text-decoration: none;
                     transition: 0.25s ease-in-out;
                     color: ${props => props.theme.colors.secondary};
                     font-size: 2.5rem;
-
-                    &:hover {
-                        text-decoration: line-through;
-                        color: ${props => props.theme.colors.tertiary};
-                    }
+                    text-decoration: none;
+                    padding-bottom: 1px;
+                    
+                    
+                    
 
                 }
             }
@@ -111,8 +112,10 @@ export default function Header(){
                     {
                         data.site.siteMetadata.menuLinks.map(link => {
                             return (
-                                <li key={link.name}  >
-                                     <Link to={link.link}>{link.name}</Link>
+                                <li key={link.name}>
+                                    <Link to={link.link}>
+                                         {link.name}
+                                    </Link>
                                 </li>
                             )
                         })
