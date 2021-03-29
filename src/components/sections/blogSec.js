@@ -132,6 +132,7 @@ export default function Blogs (){
         
         <BlogContainer>
           <h2>Some articles I've written</h2>
+          <section>
               {data.allContentfulBlogPost.edges.map(x => {
                 return (
                   <div>
@@ -156,6 +157,7 @@ export default function Blogs (){
                   
                 )
               })}
+            </section>
             
         </BlogContainer>
     )

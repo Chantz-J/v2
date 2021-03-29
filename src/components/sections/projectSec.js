@@ -110,6 +110,7 @@ export default function Projects(){
     return (
         <ProjectContainer>
           <h2>Featured Projects</h2>
+          <article>
            {
                data.allMarkdownRemark.edges.map(project => {
                    return(
@@ -124,6 +125,7 @@ export default function Projects(){
                    )
                })
            }
+           </article>
         </ProjectContainer>
     )
 }
