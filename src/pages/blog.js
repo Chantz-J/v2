@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery, } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
 
 const StyledMain =  styled.main`
   margin-left: 160px; 
+  background: ${props => props.theme.colors.dark};
 `
 
 
@@ -26,6 +27,12 @@ const Blog = () => {
             slug
             publishedDate (formatString: "MMMM Do, YYYY")
             updatedAt (fromNow: true)
+            image  {
+              description
+              fixed (height: 200) {
+                src
+              }
+            }
           }
         }
       }
@@ -35,22 +42,22 @@ const Blog = () => {
         <Layout>
           <Head title="Blog"/>
           <StyledMain>
-            <ol>
                 {data.allContentfulBlogPost.edges.map(x => {
                   return (
-                    <li key={x.node.id}>
-                      <Link to={`${x.node.slug}`}>
-                        <h2>{x.node.title}</h2>
-                        <p>{x.node.publishedDate}</p>
-                        <p>Edited {x.node.updatedAt}</p>
+                      <Link key={x.node.id} to={`${x.node.slug}`}>
+                        <article className="article-container">
+                          <div className="img-container">
+                            <img src={x.node.image.fixed.src} alt={x.node.image.description} />
+                          </div>
+                          <div className="article-info">
+                              <h3>{x.node.title}</h3>
+                              <p>{x.node.publishedDate}</p>
+                              <p>{x.node.updatedAt}</p>
+                          </div>
+                        </article>
                       </Link>
-                      <br></br>
-                      <br></br>
-                      <br></br>
-                    </li>
-                  )
+                    )
                 })}
-              </ol>
           </StyledMain>
         </Layout>
     )

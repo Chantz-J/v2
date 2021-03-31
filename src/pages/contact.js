@@ -7,6 +7,7 @@ import Head from '../components/head'
 
 const StyledMain = styled.main`
   margin-left: 160px;
+  padding: 0 1rem;
   ${mediaQueries.phablet`
     margin-left: 0;
    `}
@@ -16,7 +17,12 @@ const StyledMain = styled.main`
         width: 100%;
         height: 100vh;
         display: flex;
+        align-items: center;
+        justify-content: space-around;
         background: ${props => props.theme.colors.dark};
+        ${mediaQueries.desktop`
+            flex-direction: column;
+        `}
 
     .contact-text {
         width: 100%;
@@ -43,7 +49,7 @@ const StyledMain = styled.main`
         margin: 0 0 2rem 0;
         width: 100%;
         height: 70vh;
-        padding: 3rem;
+        
         
         
         .contact-form {
@@ -62,7 +68,7 @@ const StyledMain = styled.main`
                 border-bottom: 1px solid #e5e5e5;
                 height: 50px;
                 margin: 2rem 0;
-                font-size: 1.7rem;
+                font-size: 1.2rem;
                 outline: none;
                 background: ${props => props.theme.colors.dark};
                 color: ${props => props.theme.colors.secondary};
@@ -80,7 +86,7 @@ const StyledMain = styled.main`
                 min-height: 50px;
                 max-height: 600px;
                 resize: vertical;
-                font-size: 1.7rem;
+                font-size: 1.2rem;
                 font-family: ${props => props.theme.fonts.head};
                 background: ${props => props.theme.colors.dark};
                 color: ${props => props.theme.colors.secondary};
