@@ -56,8 +56,8 @@ const BlogContainer =  styled.section`
         width: 90%;
   
         .content {
-  
-          width: 100%;
+          height: 500px;
+          width: 80%;
           overflow: hidden;
   
           img {
