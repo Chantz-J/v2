@@ -12,6 +12,9 @@ const ProjectContainer = styled.section`
   justify-content: center;
   
   h2 {
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    font-size: .6rem;
     margin: 2rem 0;
     align-self: flex-start;
     color: ${props => props.theme.colors.secondary};
@@ -109,7 +112,7 @@ export default function Projects(){
     `)
     return (
         <ProjectContainer>
-          <h2>Featured Projects</h2>
+          <h2>Projects</h2>
           <article>
            {
                data.allMarkdownRemark.edges.map(project => {

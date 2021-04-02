@@ -43,6 +43,9 @@ const StyledFooter = styled.footer`
          ${mediaQueries.desktop_medium`
           flex-direction: column;
         `}
+        ${mediaQueries.phablet`
+            display: none;
+        `}
 
      }
 

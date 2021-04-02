@@ -8,7 +8,7 @@ const BlogContainer =  styled.section`
     flex-direction: column;
     background: ${props => props.theme.colors.dark};
     padding: 6rem 7rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     ${mediaQueries.desktop_medium`
       flex-direction: column;
     `}
@@ -18,12 +18,13 @@ const BlogContainer =  styled.section`
 
       h2 {
         margin: 2rem 0;
-        align-self: flex-start;
         color: ${props => props.theme.colors.secondary};
         font-family: ${props => props.theme.fonts.head};
-        font-size: 1.7rem;
+        font-size: 1rem;
         padding-bottom: 5px;
         position: relative;
+        text-transform: uppercase;
+        letter-spacing: .4rem;
         
         ::after {
             content: '';
@@ -53,7 +54,7 @@ const BlogContainer =  styled.section`
       text-decoration: none;
 
       article {
-        width: 90%;
+        width: 100%;
   
         .content {
           height: 500px;
@@ -61,8 +62,7 @@ const BlogContainer =  styled.section`
           overflow: hidden;
   
           img {
-  
-            height: 100%;
+            width: 100%;
             transition: transform .5s ease;
   
             &:hover {
@@ -135,21 +135,20 @@ export default function Blogs (){
           <section>
               {data.allContentfulBlogPost.edges.map(x => {
                 return (
-                  <div>
+                  <div style={{padding: '1rem'}}>
                       <Link to={`/blog/${x.node.slug}`} style={{textDecoration: 'none'}}>
                       <article>
                         
                         <div className="content">
-                          <img src={x.node.image.fixed.src} alt={x.node.image.description} width='100%'/>
+                          <img src={x.node.image.fixed.src} alt={x.node.image.description} />
+                          
                           <div className="content-info">
-
-                          </div>
                         </div>
-                        <div className="title">
+                        </div>
+                        {/* <div className="title">
                           <h3>{x.node.title}</h3>
                           <p>{x.node.publishedDate}</p>
-                        </div>
-
+                        </div> */}
                       </article>
                     </Link>
                   </div>
