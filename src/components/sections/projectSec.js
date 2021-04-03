@@ -72,9 +72,8 @@ const ProjectContainer = styled.section`
         }
       }
     
-      .project-info {
-        
-      }
+      
+
  
   }
 

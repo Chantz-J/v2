@@ -7,6 +7,7 @@ import Head from '../components/head'
 import Hero from '../components/sections/heroSec'
 import Projects from '../components/sections/projectSec'
 import Blogs from '../components/sections/blogSec'
+import About from '../components/sections/aboutSec'
 
 
 
@@ -23,6 +24,7 @@ export default function Index (){
         <Head title="Home"/>
         <StyledMain>
           <Hero />
+          <About />
           <Projects />
           <Blogs />
         </StyledMain>

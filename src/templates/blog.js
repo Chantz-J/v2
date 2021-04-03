@@ -7,12 +7,27 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+
 const StyledMain = styled.main`
+  color: ${props => props.theme.colors.secondary};
   background: ${props => props.theme.colors.dark};
   margin-left: 160px;
   ${mediaQueries.phablet`
     margin-left: 0;
    `}
+
+   h1 {
+     color: ${props => props.theme.colors.secondary};
+     font-family: ${props => props.theme.fonts.head};
+     font-size: 2rem;
+   }
+
+   .published {
+    color: ${props => props.theme.colors.secondary};
+    font-family: ${props => props.theme.fonts.body};
+    font-size: 1rem;
+   }
+
 `
 
 export const query = graphql`
@@ -43,10 +58,13 @@ export default function Blog(props){
         <Layout>
           <Head title={props.data.contentfulBlogPost.title} />
           <StyledMain>
-            <h1>{props.data.contentfulBlogPost.title}</h1>
-            <p>{props.data.contentfulBlogPost.publishedDate}</p>
-            <p>{props.data.contentfulBlogPost.updatedAt}</p>
-            {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+            <section>
+              <h1>{props.data.contentfulBlogPost.title}</h1>
+              <p className="published">{props.data.contentfulBlogPost.publishedDate}</p>
+              {/* <p>{props.data.contentfulBlogPost.updatedAt}</p> */}
+              <br></br>
+              {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+            </section>
           </StyledMain>
         </Layout>
     )

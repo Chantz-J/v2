@@ -46,7 +46,7 @@ const StyledHero = styled.section`
        color: ${props => props.theme.colors.secondary};
        background: ${props => props.theme.colors.dark};
        padding: .6rem;
-       font-size: .8rem;
+       font-size: .7rem;
        border: none;
        text-transform: uppercase;
        letter-spacing: .4rem;
