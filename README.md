@@ -1,5 +1,6 @@
-
 <p align="center">
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/d179fd68-846a-4852-902c-a0c04f366449/deploy-status)](https://app.netlify.com/sites/friendly-yalow-96d30f/deploys)
+  <br>
   My 🤠 Portfolio Website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
 </p>
 
