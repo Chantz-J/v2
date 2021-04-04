@@ -94,6 +94,7 @@ export default function Projects(){
         allMarkdownRemark {
           edges {
             node {
+              id
               html
               frontmatter {
                 title 
@@ -111,12 +112,14 @@ export default function Projects(){
     `)
     return (
         <ProjectContainer>
-          <h2>Projects</h2>
+          <h2> Featured Project</h2>
           <article>
            {
                data.allMarkdownRemark.edges.map(project => {
                    return(
-                    <Link to={`${project.node.frontmatter.slug}`}>
+                    <Link key={project.node.id} 
+                    to={`${project.node.frontmatter.slug}`}
+                    >
                       <div className="filter">
                           <div className="project">
                             <img src={project.node.frontmatter.preview.publicURL} width="100%"/>

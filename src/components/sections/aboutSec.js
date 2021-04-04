@@ -26,7 +26,7 @@ const AboutContainer = styled.section`
     
 
     h2 {
-        padding: 1rem;
+        margin: 1rem;
         color: ${props => props.theme.colors.secondary};
         font-family: ${props => props.theme.fonts.head};
         align-self: flex-start;

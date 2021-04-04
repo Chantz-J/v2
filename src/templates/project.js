@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
 
@@ -16,6 +16,16 @@ const StyledMain = styled.main`
        color: ${props => props.theme.colors.primary};
 
        .project {
+
+            a {
+                color: ${props => props.theme.colors.secondary};
+                text-decoration: none;
+                padding-left: 25%;
+                font-family: ${props => props.theme.fonts.head};
+                padding-bottom: 5px;
+                position: relative;
+
+            }
 
             h2 {
                 font-size: 2.8rem;
@@ -40,6 +50,10 @@ const StyledMain = styled.main`
             }
             
        }
+
+       .content {
+           padding: 1rem 2%;
+       }
    }
 `
 
@@ -50,6 +64,7 @@ export default function Project () {
         query{
             markdownRemark {
               html
+              id
               frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 slug
@@ -66,6 +81,9 @@ export default function Project () {
                     <div className="project">
                         <h2>{data.markdownRemark.frontmatter.title}</h2>
                         <p className="date">{data.markdownRemark.frontmatter.date}</p>
+                        <a href="https://github.com/TT-33-Water-My-Plants" target="_blank">Live Demo</a>
+                        <br></br>
+                        <a href="https://water-my-plants-tt-33.vercel.app/" target="_blank">Source Code</a>
                         <div
                         className="content"
                         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html}}
@@ -77,5 +95,6 @@ export default function Project () {
             )}
         />
     )
+
 }
         
