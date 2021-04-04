@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import mediaQueries from '../../styles/breakpoints'
+import PDF from '../../assets/resume.pdf'
 
 
 const StyledHero = styled.section`
@@ -71,6 +72,12 @@ const StyledHero = styled.section`
           transform-origin: bottom left;
          }
        }
+
+       a { 
+         text-decoration: none;
+         color: ${props => props.theme.colors.secondary};
+       }
+
       }
        
    }
@@ -144,7 +151,7 @@ export default function Hero() {
                 <h1>
                   <p style={{textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff'}}>{data.site.siteMetadata.description}</p>
                 </h1>
-                <button>Resume</button>
+                <button><a href={PDF} target="_blank">Resume</a></button>
             </div>
           </div>
         </StyledHero>
