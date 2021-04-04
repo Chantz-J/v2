@@ -81,9 +81,9 @@ export default function Project () {
                     <div className="project">
                         <h2>{data.markdownRemark.frontmatter.title}</h2>
                         <p className="date">{data.markdownRemark.frontmatter.date}</p>
-                        <a href="https://github.com/TT-33-Water-My-Plants" target="_blank">Live Demo</a>
+                        <a href="https://github.com/TT-33-Water-My-Plants" target="_blank">Source Code</a>
                         <br></br>
-                        <a href="https://water-my-plants-tt-33.vercel.app/" target="_blank">Source Code</a>
+                        <a href="https://water-my-plants-tt-33.vercel.app/" target="_blank">Live Demo</a>
                         <div
                         className="content"
                         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html}}
