@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
+import { useForm, ValidationError } from '@formspree/react'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
@@ -119,6 +120,7 @@ const StyledMain = styled.main`
 
 export default function Contact(){
     const [form, setForm] = useState({name: '', email: '', message: ''})
+    const [state, handleSubmit] = useForm("mleaegll");
 
     const handleChange = e => {
         const { name, value } = e.target
@@ -126,10 +128,6 @@ export default function Contact(){
             ...form,
             [name]: value
         })
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault()
     }
 
     return ( 
@@ -146,19 +144,26 @@ export default function Contact(){
                             <input 
                                 placeholder="Your name" 
                                 name="name"
+                                type="name"
+                                id="name"
                                 value={form.name} 
                                 onChange={handleChange} />
                             <input 
                                 placeholder="Your email" 
                                 name="email"
+                                type="email"
+                                id='email'
                                 value={form.email} 
                                 onChange={handleChange}/>
                             <textarea 
-                                placeholder="Say something nice..."  
+                                placeholder="Say something nice..." 
+                                id="message" 
                                 name="message"
                                 value={form.message} 
                                 onChange={handleChange}/>
-                            <button>Send Message</button>
+                            <button type="submit" disabled={state.submitting}>
+                                {state.succeeded ? 'Message sent. Thanks!' : 'Submit'}
+                            </button>
                         </form>
                     </div>
                 </section>
