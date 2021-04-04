@@ -1,38 +1,57 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<!-- <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>-->
+<div align="center">
+  <img alt="Logo" src="https://github.com/Chantz-J/v2/blob/main/public/favicon-32x32.ico" width="100" />
+</div>
 <h1 align="center">
-  Personal Website - v2
-</h1> 
+  <a href="https://brittanychiang.com" target="_blank">
+</h1>
+<p align="center">
+  My 🤠 Portfolio Website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+</p>
 
-Currently building this out using Gatsby, GraphQL and Contentful as a headless CMS. It will most likely be hosted with Netlify.
+<p align="center">
+  <a href="https://app.netlify.com/sites/brittanychiang/deploys" target="_blank">
+    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
+  </a>
+</p>
 
+![demo](src/assets/demo.png)
 
-## 🤠 Get Started 
+## 🛠 Installation & Set Up
 
-1.  **Make sure to install the Gatsby CLI**
+1. Install the Gatsby CLI
 
+   ```sh
+   npm install -g gatsby-cli
+   ```
 
-    ```shell
-        npm install -g gatsby-cli
-    ```
+2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
-1.  **Install node modules**
-  
+   ```sh
+   nvm install
+   ```
 
-    ```shell
-       npm install
-    ```
+3. Install dependencies
 
-1.  **Run the development server**
+   ```sh
+   yarn
+   ```
 
-      ```shell
-       npm develop
-    ```
-    
-    
+4. Start the development server
 
+   ```sh
+   npm start
+   ```
 
+## 🚀 Building and Running for Production
+
+1. Generate a full static production build
+
+   ```sh
+   npm run build
+   ```
+
+1. Preview the site as it will appear once deployed
+
+   ```sh
+   npm run serve
+   ```
