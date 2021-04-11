@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import styled from "styled-components"
 import mediaQueries from '../../styles/breakpoints'
 
+import User from '../../icons/user'
+import Pencil from '../../icons/pencil'
+import Terminal from '../../icons/terminal'
 
 const AboutContainer = styled.section`
     background: ${props => props.theme.colors.dark};
@@ -149,30 +152,27 @@ export default function About(){
                     <div 
                         className={toggleState === 1 ? "tab tab-1 active" : "tab tab-1"}  
                         onClick={() => toggleTab(1)}>
-                        Tab 1
+                        <User />
                     </div>
                     <div 
                         className={toggleState === 2 ? "tab tab-2 active" : "tab tab-2"}  
                         onClick={() => toggleTab(2)}>
-                        Tab 2
+                        <Pencil />
                     </div>
                     <div 
                         className={toggleState === 3 ? "tab tab-3 active" : "tab tab-3"}   
-                        onClick={() => toggleTab(3)}>Tab 3
+                        onClick={() => toggleTab(3)}>
+                        <Terminal />
                     </div>
                     <span className="highlighter"></span>
-                    
                 </div>
                 <div className="content">
-
                     <div className={toggleState === 1 ? "content__section visible" : "content__section"}>
                         <p>Lorem ipsum dolor amet umami kogi you probably haven't heard of them activated charcoal hexagon literally. Vice art party XOXO retro blue bottle. Squid tousled skateboard man bun pabst unicorn sriracha poutine echo park crucifix plaid health goth four dollar toast. XOXO gochujang PBR&B kombucha brooklyn street art lyft swag.</p>
                     </div>
-
                     <div className={toggleState === 2 ? "content__section visible" : "content__section"}>
                         <p>Wayfarers small batch brooklyn, pabst godard flannel blog authentic fingerstache salvia disrupt kombucha pickled. Actually hammock semiotics DIY cold-pressed lo-fi swag franzen chia locavore. Biodiesel venmo irony, salvia shaman plaid photo booth keffiyeh VHS slow-carb chillwave knausgaard vape occupy.</p>
                     </div>
-
                     <div className={toggleState === 3 ? "content__section visible" : "content__section"}>
                         <p>Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick. Meggings franzen kogi, next level fingerstache +1 kitsch YOLO activated charcoal craft beer adaptogen twee. Yuccie tumeric irony heirloom, shoreditch kinfolk swag cold-pressed 90's chicharrones.</p>
                     </div>
