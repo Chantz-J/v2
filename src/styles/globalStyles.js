@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import mediaQueries from './breakpoints'
 
 
 const GlobalStyle = createGlobalStyle`

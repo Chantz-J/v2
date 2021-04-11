@@ -66,17 +66,19 @@ export default function Footer(){
                     author
                     end
                     email
+                    github
+                    linkedIn
                 }
             }
         }
     `)
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
+    // const scrollToTop = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth"
+    //     })
+    // }
 
     let today = new Date()
     let year = today.getFullYear()
@@ -93,10 +95,10 @@ export default function Footer(){
               </ul>
               <div className="icon_box">
                   <div className="icon">
-                      <Github />
+                      <a href={data.site.siteMetadata.github} target="_blank" rel="noreferrer"><Github /></a>
                   </div>
                   <div className="icon">
-                      <LinkedIn />
+                      <a href={data.site.siteMetadata.linkedIn} target="_blank" rel="noreferrer"><LinkedIn /></a>
                   </div>
               </div>
            </StyledFooter>

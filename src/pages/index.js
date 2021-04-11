@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from 'styled-components'
 import mediaQueries from '../styles/breakpoints'
 
@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import Hero from '../components/sections/heroSec'
 import Projects from '../components/sections/projectSec'
-import Blogs from '../components/sections/blogSec'
+// import Blogs from '../components/sections/blogSec'
 import About from '../components/sections/aboutSec'
 import ContactSec from '../components/sections/contactSec'
 

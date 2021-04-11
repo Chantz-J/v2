@@ -120,6 +120,15 @@ const AboutContainer = styled.section`
             p {
                 text-transform: none;
                 letter-spacing: .3rem;
+
+                a {
+                    color: ${props => props.theme.colors.tertiary};
+                    transition: ease-in-out .5s;
+                    &:hover {
+                        color: ${props => props.theme.colors.primary};
+                    }
+
+                }
             }
         
             &__section {
@@ -177,13 +186,13 @@ export default function About(){
                 </div>
                 <div className="content">
                     <div className={toggleState === 1 ? "content__section visible" : "content__section"}>
-                        <p>Lorem ipsum dolor amet umami kogi you probably haven't heard of them activated charcoal hexagon literally. Vice art party XOXO retro blue bottle. Squid tousled skateboard man bun pabst unicorn sriracha poutine echo park crucifix plaid health goth four dollar toast. XOXO gochujang PBR&B kombucha brooklyn street art lyft swag.</p>
+                        <p>Hello! My name is Chantz and I am eager to create convenient and remarkable user experiences. My interest in programming started back in 2019 when I decided to automate the setup of network printers using Powershell — turns out hacking together the solution was challenging and rewarding.</p>
                     </div>
                     <div className={toggleState === 2 ? "content__section visible" : "content__section"}>
-                        <p>Wayfarers small batch brooklyn, pabst godard flannel blog authentic fingerstache salvia disrupt kombucha pickled. Actually hammock semiotics DIY cold-pressed lo-fi swag franzen chia locavore. Biodiesel venmo irony, salvia shaman plaid photo booth keffiyeh VHS slow-carb chillwave knausgaard vape occupy.</p>
+                        <p>Fast-forward to today, and I've had the privilege of attending <a href='https://lambdaschool.com/' target="_blank" rel="noopener noreferrer">Lambda School</a>, where I learned industry standard technologies while working on meaningful projects daily.</p>
                     </div>
                     <div className={toggleState === 3 ? "content__section visible" : "content__section"}>
-                        <p>Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick. Meggings franzen kogi, next level fingerstache +1 kitsch YOLO activated charcoal craft beer adaptogen twee. Yuccie tumeric irony heirloom, shoreditch kinfolk swag cold-pressed 90's chicharrones.</p>
+                        <p>My main focus these days is building responsive, accessible, digital experiences.</p>
                     </div>
                 </div>
             </div>

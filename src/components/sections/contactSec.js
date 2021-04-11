@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { graphql, useStaticQuery } from 'gatsby'
 import mediaQueries from '../../styles/breakpoints'
 
 const ContactContainer = styled.div`
@@ -91,15 +92,25 @@ const ContactContainer = styled.div`
 `
 
 export default function ContactSec(){
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    author
+                    email
+                }
+            }
+        }
+    `)
     return (
         <ContactContainer>
             <p>Contact</p>
-            <a href="#">send me a message</a>
+            <a href={`mailto:${data.site.siteMetadata.email}`}>send me a message</a>
             <span></span>
             <div className="contact-info">
                 <div className="info">
                     <p className="snippet">N - M - :</p>
-                    <p className="full">Chantz Johnson</p>
+                    <p className="full">{data.site.siteMetadata.author}</p>
                 </div>
                 <div className="info">
                     <p className="snippet">- G - :</p>
@@ -107,7 +118,7 @@ export default function ContactSec(){
                 </div>
                 <div className="info">
                     <p className="snippet">M - - L :</p>
-                    <p className="full stubborn">johnson.chantz@gmail.com</p>
+                    <p className="full stubborn">{data.site.siteMetadata.email}</p>
                 </div>
                 <div className="info">
                     <p className="snippet">P H - N - :</p>
