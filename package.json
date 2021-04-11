@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@fontsource/abel": "^4.2.2",
     "@formspree/react": "^2.2.3",
     "fontsource-ibm-plex-mono": "^4.0.0",
     "fontsource-open-sans": "^4.0.0",

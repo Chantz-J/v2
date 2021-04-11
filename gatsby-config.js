@@ -6,7 +6,7 @@ module.exports = {
    description: `I'm Chantz, a web developer specializing in 
    building exceptional websites, applications,
    and everything in between.`,
-   siteURL: '',
+   siteURL: 'www.chantz.io',
    end: 'A front-end software engineer focused on pixel-perfect, performance.',
    email: 'johnson.chantz@gmail.com',
    github: 'https://github.com/Chantz-J',
@@ -26,7 +26,6 @@ module.exports = {
       name: 'Contact',
       link: '/contact'
     },
-  
    ],
    
 
