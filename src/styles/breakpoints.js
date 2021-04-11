@@ -3,7 +3,7 @@ import { css } from 'styled-components'
 const breakpoints = [
     ['phone_small', 320],
     ['phone', 376],
-    ['phablet', 540],
+    ['phablet', 573],
     ['tablet', 735],
     ['desktop', 1070],
     ['desktop_small', 968],
