@@ -43,12 +43,20 @@ const AboutContainer = styled.section`
         margin: 20px auto;
         width: 500px;
         border-radius: 2px;
+        ${mediaQueries.tablet`
+          width: 100%;
+        `}
 
         .tabs {
+            padding: 0 20px;
             display: flex;
             position: relative;
             z-index: 3;
             width: max-content;
+            ${mediaQueries.phone`
+              width: 100%;
+              padding: 0;
+            `}
 
             .tab {
                 width: 100px;
@@ -70,6 +78,7 @@ const AboutContainer = styled.section`
                 }
 
                 &.active {
+                    background: ${props => props.theme.colors.slighty_dark};
                     color: ${props => props.theme.colors.primary};
                 }
 
@@ -146,7 +155,7 @@ export default function About(){
 
     return (
         <AboutContainer>
-            <p>About</p>
+            <p style={{fontSize: '1.7rem'}}>About</p>
             <div className="container">
                 <div class="tabs">
                     <div 

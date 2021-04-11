@@ -8,6 +8,7 @@ import Hero from '../components/sections/heroSec'
 import Projects from '../components/sections/projectSec'
 import Blogs from '../components/sections/blogSec'
 import About from '../components/sections/aboutSec'
+import ContactSec from '../components/sections/contactSec'
 
 
 
@@ -26,7 +27,8 @@ export default function Index (){
           <Hero />
           <About />
           <Projects />
-          <Blogs />
+          {/* <Blogs /> */}
+          <ContactSec />
         </StyledMain>
       </Layout>
   )
