@@ -1,7 +1,9 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import ArrowUp from '../icons/ArrowUp'
+
+import Github from '../icons/github'
+import LinkedIn from '../icons/linkedIn'
 
 import mediaQueries from '../styles/breakpoints'
 
@@ -9,62 +11,49 @@ const StyledFooter = styled.footer`
     padding: 0 1rem;
     min-height: 13vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #3a3a3a;
     background: ${props => props.theme.colors.dark};
     font-family: ${props => props.theme.fonts.head};
     color: ${props => props.theme.colors.secondary};
     margin-left: 160px;
-    ${mediaQueries.desktop_medium`
-        justify-content: space-evenly;
-    `}
-    ${mediaQueries.phablet`
+   ${mediaQueries.desktop_medium`
+      padding: 0 5rem;
+   `}
+   ${mediaQueries.desktop`
+      padding: 0 3rem;
+   `}
+   ${mediaQueries.tablet`
       margin-left: 0;
+      padding: 0 1rem;
+   `}
+   ${mediaQueries.phablet`
       padding: 1rem;
-    `}
-    ${mediaQueries.tablet`
-        flex-direction: column;
-    `}
+   `}
     
-     .copyright {
-         font-family: ${props => props.theme.fonts.body};
-         display: flex;
-         width: 13%;
-         display: flex;
-         justify-content: space-between;
-     }
+    ul {
+        width: 47%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
 
-     .quick-contact {
-         font-family: ${props => props.theme.fonts.body};
-         display: flex;
-         justify-content: space-between;
-         width: 25%;
-         ${mediaQueries.desktop_medium`
-          flex-direction: column;
-        `}
-        ${mediaQueries.phablet`
-            display: none;
-        `}
-
-     }
-
-     button {
-        outline: none;
-        transition: 0.25s ease-in-out;
-        padding: .5rem;
-        border: 1px solid white;
-        border-radius: 50%;
-        width: 50px;
-        color: ${props => props.theme.colors.secondary};
-        background: ${props => props.theme.colors.dark};
-
-        &:hover {
-            cursor: pointer;
-            color: ${props => props.theme.colors.dark};
-            background: ${props => props.theme.colors.secondary};
+        li {
+            font-size: .8rem;
+            list-style: none;
         }
-     }
+    }
+
+    .icon_box {
+        width: 47%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .icon {
+            color: ${props => props.theme.colors.tertiary};
+        }
+    }
     
 `
 
@@ -77,38 +66,41 @@ export default function Footer(){
                     author
                     end
                     email
+                    github
+                    linkedIn
                 }
             }
         }
     `)
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
-
+    // const scrollToTop = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth"
+    //     })
+    // }
 
     let today = new Date()
     let year = today.getFullYear()
     return (
            <StyledFooter>
-               <div className="copyright">
-                    <h6>&copy; {data.site.siteMetadata.author}</h6>
-                    <p>{year}</p>
-               </div>
-               <div className="quick-contact">
-                   <div className="contact">
-                      <p>
-                        <a style={{color: '#e5e5e5'}} href={`mailto:${data.site.siteMetadata.email}`}>{data.site.siteMetadata.email}</a>
-                      </p>
-                      <p>+1(813)993-2504</p>
-                   </div>
-                   <button onClick={() => scrollToTop()}>
-                     <ArrowUp />
-                   </button>
-               </div>
+              <ul>
+                 <li>C</li>
+                 <li>O</li>
+                 <li>N</li>
+                 <li>N</li>
+                 <li>E</li>
+                 <li>C</li>
+                 <li>T</li>
+              </ul>
+              <div className="icon_box">
+                  <div className="icon">
+                      <a href={data.site.siteMetadata.github} target="_blank" rel="noreferrer"><Github /></a>
+                  </div>
+                  <div className="icon">
+                      <a href={data.site.siteMetadata.linkedIn} target="_blank" rel="noreferrer"><LinkedIn /></a>
+                  </div>
+              </div>
            </StyledFooter>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import mediaQueries from '../../styles/breakpoints'
 import PDF from '../../assets/resume.pdf'
 
@@ -61,7 +61,7 @@ const StyledHero = styled.section`
         height: 2px;
         bottom: 0;
         left: 0;
-        background: ${props => props.theme.gradients.second};
+        background: ${props => props.theme.colors.slighty_dark};
         transform-origin: bottom right;
         transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
        }
@@ -151,7 +151,7 @@ export default function Hero() {
                 <h1>
                   <p style={{textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff'}}>{data.site.siteMetadata.description}</p>
                 </h1>
-                <button><a href={PDF} target="_blank">Resume</a></button>
+                <button><a href={PDF} target="_blank" rel="noreferrer">Resume</a></button>
             </div>
           </div>
         </StyledHero>

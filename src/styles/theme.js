@@ -2,7 +2,7 @@
   colors: {
     primary: '#fff',
     secondary: '#e5e5e5',
-    tertiary: '#3a3a3a',
+    tertiary: '#767676',
     dark: `#202124`, //#171717
     slighty_dark: `#2c353a`
   },
