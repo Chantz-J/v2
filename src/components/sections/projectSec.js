@@ -31,7 +31,7 @@ const ProjectContainer = styled.section`
         height: 2px;
         bottom: 0;
         left: 0;
-        background: ${props => props.theme.gradients.second};
+        background: ${props => props.theme.colors.slighty_dark};
         transform-origin: bottom right;
         transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
     }
