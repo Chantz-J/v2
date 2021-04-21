@@ -100,12 +100,12 @@ const StyledHero = styled.section`
        width: 100%;
        color: ${props => props.theme.colors.dark};
        font-family: ${props => props.theme.fonts.head};
-       font-weight: bold;
+       font-weight: 400;
+       text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff;
        
      }
    }
    .description {
-    
      display: flex;
      justify-content: center;
      p {
@@ -149,7 +149,7 @@ export default function Hero() {
           <div className="wrapper">
             <div className="name-box container">
                 <h1>
-                  <p style={{textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,1px 1px 0 #fff'}}>{data.site.siteMetadata.description}</p>
+                  <p>{data.site.siteMetadata.description}</p>
                 </h1>
                 <button><a href={PDF} target="_blank" rel="noreferrer">Resume</a></button>
             </div>

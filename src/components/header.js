@@ -23,6 +23,7 @@ const Nav = styled.nav`
             align-items: center;
             justify-content: center;
             border: none;
+            cursor: none;
 
             &:hover {
                 text-decoration: line-through;

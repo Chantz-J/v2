@@ -2,14 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 
 
 const GlobalStyle = createGlobalStyle`
-    :root {
-        --light: #EAF2F8; 
-        --dark: #282936;
-        
-    }
-
 
     * {
+        cursor: none;
         font-size: 100%;
         padding: 0;
         margin: 0;
