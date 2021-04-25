@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
 
     * {
-        cursor: none;
+        
         font-size: 100%;
         padding: 0;
         margin: 0;

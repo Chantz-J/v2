@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 import Header from './header'
 import Footer from './footer'
 import Sidebar from './sidebar'
-import Cursor from './Cursor'
 
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/globalStyles'
@@ -19,7 +18,6 @@ export default function Layout(props) {
             <ThemeProvider theme={theme}>
                 <GlobalLayout>
                     <GlobalStyle />
-                    <Cursor />
                     <Sidebar />
                     <Header />
                         {props.children}
