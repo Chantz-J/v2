@@ -70,4 +70,4 @@ yarn-error.log
 
 
 # Strapi backend
-./backend/.gitignore
+.backend/
