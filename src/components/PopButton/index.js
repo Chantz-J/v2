@@ -1,0 +1,31 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+const styles = {
+  // background: "#7fffd4",
+  background: "#5CD2F7",
+  borderRadius: '11px',
+//   width: 150,
+  padding: "10px 20px",
+//   margin: "auto",
+  color: "#e5e5e5",
+  outline: "none",
+  border: "none",
+  cursor: "pointer",
+  fontSize: '1rem',
+  marginTop: "1rem",
+  alignSelf: 'flex-start'
+};
+
+export default function PopButton({text, handleClick}){
+  return (
+        <motion.button
+        style={styles}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}
+        onClick={handleClick}
+            >
+        {text}
+        </motion.button>
+  )
+}

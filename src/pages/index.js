@@ -6,18 +6,24 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import Hero from '../components/sections/heroSec'
 import Projects from '../components/sections/projectSec'
-// import Blogs from '../components/sections/blogSec'
+import ArticleComponent from '../components/Article/ArticleComponent'
 import About from '../components/sections/aboutSec'
 import ContactSec from '../components/sections/contactSec'
 
 
 
+// const StyledMain = styled.main`
+//    margin-left: 160px;
+//    ${mediaQueries.phablet`
+//     margin-left: 0;
+//    `}
+// `
 const StyledMain = styled.main`
-  margin-left: 160px;
-  ${mediaQueries.phablet`
-    margin-left: 0;
-   `}
+  background: black;
+
 `
+
+
 
 export default function Index (){
   return (
@@ -25,9 +31,9 @@ export default function Index (){
         <Head title="Home"/>
         <StyledMain>
           <Hero />
-          <About />
+          <ArticleComponent />
+          {/* <About /> */}
           <Projects />
-          {/* <Blogs /> */}
           <ContactSec />
         </StyledMain>
       </Layout>

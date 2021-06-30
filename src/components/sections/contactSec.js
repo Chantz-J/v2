@@ -31,6 +31,7 @@ const ContactContainer = styled.div`
         font-size: 1.7rem;
         text-transform: uppercase;
         letter-spacing: .5rem;
+        z-index: 0;
     }
 
     a {
@@ -44,6 +45,7 @@ const ContactContainer = styled.div`
         margin: 0 0 1rem 0;
         text-decoration: none;
         transition: ease-in-out .5s;
+        z-index: 0;
 
         &:hover {
             background: ${props => props.theme.colors.slighty_dark};
@@ -56,6 +58,7 @@ const ContactContainer = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        z-index: 0;
 
         .info {
             display: flex;

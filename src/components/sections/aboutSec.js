@@ -166,7 +166,7 @@ export default function About(){
         <AboutContainer>
             <p style={{fontSize: '1.7rem'}}>About</p>
             <div className="container">
-                <div class="tabs">
+                <div className="tabs">
                     <div 
                         className={toggleState === 1 ? "tab tab-1 active" : "tab tab-1"}  
                         onClick={() => toggleTab(1)}>

@@ -1,13 +1,10 @@
-
 module.exports = {
  siteMetadata: {
    title: 'Chantz',
    author: 'Chantz Johnson',
-   description: `I'm Chantz, a web developer specializing in 
-   building exceptional websites, applications,
-   and everything in between.`,
+   description: `I'm Chantz, and I make things for the web.`,
    siteURL: 'www.chantz.io',
-   end: 'A front-end software engineer focused on pixel-perfect, performance.',
+   end: " I specialize in building exceptional websites, applications, and everything in between.",
    email: 'johnson.chantz@gmail.com',
    github: 'https://github.com/Chantz-J',
    linkedIn: 'https://www.linkedin.com/in/chantz-j-603034206/',
@@ -36,13 +33,27 @@ module.exports = {
     },
 
     {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: process.env.API_URL || "http://localhost:1337",
+        collectionTypes: ["article", "category", "writer"],
+        singleTypes: [`homepage`, `global`],
+        queryLimit: 1000,
+      },
+    },
+
+    "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+
+    {
       resolve: `gatsby-source-filesystem`, //Pull content/markdown from files
       options: {
         name: `src`,
         path: `${__dirname}/src/`
       }
     },
-    'gatsby-plugin-sharp',
+    
     {
       resolve: `gatsby-transformer-remark`,
       options: {

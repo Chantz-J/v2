@@ -17,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ::selection {
-        background: ${props => props.theme.colors.primary};
-        color: ${props => props.theme.colors.dark};
+        background: ${props => props.theme.colors.lightGrey};
+        
     }
     
     ::-webkit-scrollbar {
@@ -27,17 +27,30 @@ const GlobalStyle = createGlobalStyle`
       
      
       ::-webkit-scrollbar-track {
-        background: ${props => props.theme.colors.dark};
+        background: ${props => props.theme.colors.blue[1]};
       }
       
       
       ::-webkit-scrollbar-thumb {
-        background: ${props => props.theme.colors.tertiary};
+        background: ${props => props.theme.colors.grey};
         border-radius: 34px;
         
         &:hover {
-            background: ${props => props.theme.colors.secondary};
+            background: ${props => props.theme.colors.lightGrey};
         }
+      }
+
+      ::placeholder { 
+        color: rgba(136, 146, 176, 0.1);
+        opacity: 1; 
+      }
+      
+      :-ms-input-placeholder { 
+        color: rgba(136, 146, 176, 0.1);
+      }
+      
+      ::-ms-input-placeholder { 
+        color: rgba(136, 146, 176, 0.1);
       }
       
       

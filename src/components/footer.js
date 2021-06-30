@@ -1,4 +1,5 @@
 import React from 'react'
+import { FooterWrapper, FooterSocialWrapper, FooterSocialIcons } from './FooterElements'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
@@ -83,24 +84,28 @@ export default function Footer(){
     let today = new Date()
     let year = today.getFullYear()
     return (
-           <StyledFooter>
-              <ul>
-                 <li>C</li>
-                 <li>O</li>
-                 <li>N</li>
-                 <li>N</li>
-                 <li>E</li>
-                 <li>C</li>
-                 <li>T</li>
-              </ul>
-              <div className="icon_box">
-                  <div className="icon">
-                      <a href={data.site.siteMetadata.github} target="_blank" rel="noreferrer"><Github /></a>
-                  </div>
-                  <div className="icon">
-                      <a href={data.site.siteMetadata.linkedIn} target="_blank" rel="noreferrer"><LinkedIn /></a>
-                  </div>
-              </div>
-           </StyledFooter>
+        //    <StyledFooter>
+        //       <ul>
+        //          <li>C</li>
+        //          <li>O</li>
+        //          <li>N</li>
+        //          <li>N</li>
+        //          <li>E</li>
+        //          <li>C</li>
+        //          <li>T</li>
+        //       </ul>
+        //       <div className="icon_box">
+        //           <div className="icon">
+        //               <a href={data.site.siteMetadata.github} target="_blank" rel="noreferrer"><Github /></a>
+        //           </div>
+        //           <div className="icon">
+        //               <a href={data.site.siteMetadata.linkedIn} target="_blank" rel="noreferrer"><LinkedIn /></a>
+        //           </div>
+        //       </div>
+        //    </StyledFooter>
+        <FooterWrapper>
+
+        </FooterWrapper>
+
     )
 }
