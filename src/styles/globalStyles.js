@@ -32,12 +32,9 @@ const GlobalStyle = createGlobalStyle`
       
       
       ::-webkit-scrollbar-thumb {
-        background: ${props => props.theme.colors.grey};
+        background: ${props => props.theme.colors.blue[0]};
         border-radius: 34px;
-        
-        &:hover {
-            background: ${props => props.theme.colors.lightGrey};
-        }
+
       }
 
       ::placeholder { 

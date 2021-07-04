@@ -8,7 +8,7 @@ const styles = {
 //   width: 150,
   padding: "10px 20px",
 //   margin: "auto",
-  color: "#e5e5e5",
+  color: "#18212A",
   outline: "none",
   border: "none",
   cursor: "pointer",

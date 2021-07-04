@@ -34,6 +34,7 @@
     "gatsby-source-strapi": "^1.0.1",
     "gatsby-transformer-remark": "^2.15.0",
     "gatsby-transformer-sharp": "^3.7.1",
+    "gsap": "^3.7.0",
     "hamburger-react": "^2.4.0",
     "moment": "^2.29.1",
     "path-browserify": "^1.0.1",

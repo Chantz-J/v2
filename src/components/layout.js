@@ -38,7 +38,7 @@ export default function Layout(props) {
 
 const GlobalLayout = styled.div`
     overflow-x: hidden;
-    background: ${props => props.theme.colors.blue[0]};
+    background: ${props => props.theme.colors.blue[1]};
     color: ${props => props.theme.colors.grey};
     display: flex;
     flex-direction: column;

@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import mediaQueries from '../../styles/breakpoints'
 
 export const FooterWrapper = styled.footer`
+    background: ${props => props.theme.colors.blue[1]};
+    font-family: ${props => props.theme.fonts.head};
     grid-column: 2 / span 12;
     min-height: 11.25rem;
     padding: 3rem 0;
@@ -44,7 +46,8 @@ export const FooterSocialIcons = styled.div`
     flex: 0 0 100%;
     margin-bottom: 2rem;
 
-    img {
+    a {
+        color: ${props => props.theme.colors.grey};
         padding: 0 1rem;
         transitiom: filter 0.3s ease;
 

@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import mediaQueries from '../../styles/breakpoints'
 
 
-import SectionHeader from '../SectionHeader'
+import Banner from '../Banner'
 import HeroImage from '../HeroImage'
 
 
@@ -125,17 +125,19 @@ export default function Hero() {
   `)
 
     return (
-        <StyledHero>
-          <HeroImage />
-          {/* <SectionHeader text={'Hello there'}/> */}
-          <div className="wrapper">
-            <div className="name-box container">
-                <StyledHeader>
-                  {data.site.siteMetadata.description}
-                </StyledHeader>
-                <p>{data.site.siteMetadata.end}</p>
-            </div>
-          </div>
-        </StyledHero>
+        // <StyledHero>
+        //   <HeroImage />
+        //   <SectionHeader text={'Hello there'}/>
+        //   <div className="wrapper">
+        //     <div className="name-box container">
+        //         <StyledHeader>
+        //           {data.site.siteMetadata.description}
+        //         </StyledHeader>
+        //         <p>{data.site.siteMetadata.end}</p>
+        //     </div>
+        //   </div>
+          
+        // </StyledHero>
+        <Banner />
     )
 }
