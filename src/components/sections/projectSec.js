@@ -2,9 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import mediaQueries from '../../styles/breakpoints'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import SectionHeader from '../SectionHeader'
+import { projectData } from '../Project/data'
+
+import Project from '../Project'
 
 const ProjectContainer = styled.section`  
-  background: ${props => props.theme.colors.dark};
+  background: ${props => props.theme.colors.blue[1]};
   padding: 6rem 7rem;
   display: flex;
   flex-direction: column;
@@ -12,8 +16,7 @@ const ProjectContainer = styled.section`
   justify-content: center;
   
   h2 {
-    text-transform: uppercase;
-    letter-spacing: .4rem;
+    
     font-size: .6rem;
     margin: 2rem 0;
     align-self: flex-start;
@@ -112,9 +115,9 @@ export default function Projects(){
     `)
     return (
         <ProjectContainer>
-          <h2> Featured Project</h2>
+          <SectionHeader text={'Works'} />
           <article>
-           {
+           {/* {
                data.allMarkdownRemark.edges.map(project => {
                    return(
                     <Link key={project.node.id} 
@@ -129,6 +132,20 @@ export default function Projects(){
                     </Link>
                    )
                })
+           } */}
+           {
+             projectData.map(project => {
+               return (
+                 <Project
+                    name={project.name}
+                    type={project.type}
+                    description={project.description} 
+                    demo={project.demo}
+                    code={project.code}
+                    img={project.img}
+                 />
+               )
+             })
            }
            </article>
         </ProjectContainer>

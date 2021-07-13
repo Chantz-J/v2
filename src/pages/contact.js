@@ -20,7 +20,7 @@ const StyledMain = styled.main`
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background: ${props => props.theme.colors.dark};
+        background-color: ${props => props.theme.colors.blue[1]};
         ${mediaQueries.desktop`
             flex-direction: column;
         `}
@@ -71,7 +71,7 @@ const StyledMain = styled.main`
                 margin: 2rem 0;
                 font-size: 1.2rem;
                 outline: none;
-                background: ${props => props.theme.colors.dark};
+                background-color: ${props => props.theme.colors.blue[1]};
                 color: ${props => props.theme.colors.secondary};
                 font-family: ${props => props.theme.fonts.head};
             }
@@ -89,7 +89,7 @@ const StyledMain = styled.main`
                 resize: vertical;
                 font-size: 1.2rem;
                 font-family: ${props => props.theme.fonts.head};
-                background: ${props => props.theme.colors.dark};
+                background-color: ${props => props.theme.colors.blue[1]};
                 color: ${props => props.theme.colors.secondary};
                 border-bottom: 1px solid #e5e5e5;
                 
@@ -102,7 +102,7 @@ const StyledMain = styled.main`
                 align-self: center;
                 text-transform: uppercase;
                 font-family: ${props => props.theme.fonts.head};
-                background: ${props => props.theme.colors.dark};
+                background-color: ${props => props.theme.colors.blue[1]};
                 color: ${props => props.theme.colors.secondary};
                 box-shadow: 0 0.125rem 0.375rem 0 rgba(0, 0, 0, 0.6);
                 border: none;
