@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from 'styled-components'
+import { gsap } from "gsap"
 import { graphql, useStaticQuery } from "gatsby"
 import ArticleLayout from '../ArticleLayout/ArticleLayout'
 import ArticlesGroup from '../ArticlesGroup'
@@ -59,13 +60,20 @@ const ArticleContainer = styled.section`
 
 export default function ArticleComponent(){
   const data = useStaticQuery(query)
+  // const ele = useRef(null)
+
+  // useEffect(() => {
+  //   gsap.fromTo(ele.current, 
+  //     {opacity: 0,},
+  //     {opacity: 1, y: 120, duration: 2,}
+  //   )
+  // }, [])
 
   return (
     <ArticleLayout seo={data.strapiHomepage.seo}>
         <ArticleContainer>
             <div className="uk-section">
                 <div className="uk-container uk-container-large">
-                  {/* <h2>{data.strapiHomepage.hero.title}</h2> */}
                   <SectionHeader text={'Articles'}/>
                   <ArticlesGroup articles={data.allStrapiArticle.edges} />
                 </div>

@@ -17,8 +17,9 @@ const styles = {
   alignSelf: 'flex-start'
 };
 
-export default function PopButton({text, handleClick}){
+export default function PopButton({text, handleClick, href}){
   return (
+      <a href={href}>
         <motion.button
         style={styles}
         whileHover={{ scale: 1.1 }}
@@ -27,5 +28,6 @@ export default function PopButton({text, handleClick}){
             >
         {text}
         </motion.button>
+      </a>
   )
 }

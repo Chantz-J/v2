@@ -33,6 +33,8 @@ max-width: 1200px;
           grid-column: 1/-1;
           padding: 40px;
         }
+
+        
     }
 
     .project-content .project-label {
@@ -50,6 +52,11 @@ max-width: 1200px;
         line-height: 1.5;
         color: #aaa;
       }
+
+    .project-content .project-details ul li {
+        list-style: none;
+    }
+
       .project-content .project-details p {
         background: ${props => props.theme.colors.blue[0]};
         color: ${props => props.theme.colors.grey};
@@ -57,6 +64,7 @@ max-width: 1200px;
         box-shadow: 0 0.125rem 0.375rem 0 rgba(0, 0, 0, 0.12);
         padding: 20px 25px;
       }
+
       @media (max-width: 600px) {
         .project-content .project-details p {
           background-color: transparent;
@@ -133,32 +141,27 @@ max-width: 1200px;
 // background: linear-gradient(0.4turn, #1B2631, #5CD2F7);
 // filter: grayscale(100%) contrast(1);
 
-export default function Project(){
+export default function Project({name, type, description, demo, code, img}){
     return (
         <ProjectContainer>
             <div class="project">
                 <div class="project-content">
-                  <div class="project-label">Game of Thrones</div>
-                  <h4 class="project-title">A Clash of Kings</h4>
+                  <div class="project-label">{name}</div>
+                  <h4 class="project-title">{type}</h4>
                   <div class="project-details">
-                      <p>Lorem ipsum dolor amet you probably haven't heard of them bitters selvage listicle heirloom. Locavore kombucha street art ennui 90's, organic food truck hell of seitan skateboard literally hexagon fixie next level. Lomo salvia yuccie hella roof party echo park vegan four dollar toast cred.</p>
+                      <p>{description}</p>
                       <ul>
-                          <li>Shadow</li>
-                          <li>Demon</li>
-                          <li>Baby</li>
+                          <li>
+                            <a href={demo}>Demo</a>
+                          </li>
+                          <li>
+                            <a href={code}>Code</a>
+                          </li>
                       </ul>
                   </div>
                 </div>
-                
                 <div class="project-img">
-                     <img src="https://cdn.vox-cdn.com/thumbor/w-IFN0FWpN4BGfhZaV9EYqs4nLo=/51x0:977x617/1200x800/filters:focal(51x0:977x617)/cdn.vox-cdn.com/uploads/chorus_image/image/50017015/Screen_Shot_2016-07-04_at_12.37.15_PM.0.0.png" alt="" />
-                     {/* <StaticImage 
-                        src="https://cdn.vox-cdn.com/thumbor/w-IFN0FWpN4BGfhZaV9EYqs4nLo=/51x0:977x617/1200x800/filters:focal(51x0:977x617)/cdn.vox-cdn.com/uploads/chorus_image/image/50017015/Screen_Shot_2016-07-04_at_12.37.15_PM.0.0.png"
-                        alt="Project Image"
-                        placeholder="blurred"
-                        style={{width: '100%', minHeight: '50vh', position: 'relative', mixBlendMode: 'multiply', filter: 'grayscale(100%) contrast(1)'}}
-                     /> */}
-
+                     <img src={img} alt="project" />
                 </div>
             </div>
         </ProjectContainer>

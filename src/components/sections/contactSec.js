@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from 'gatsby'
 import mediaQueries from '../../styles/breakpoints'
 import SectionHeader from '../SectionHeader'
-import BubblyButton from '../Button/BubblyButton'
+import PopButton from '../PopButton'
+
 
 const ContactContainer = styled.div`
     background: ${props => props.theme.colors.blue[1]};
@@ -45,7 +46,8 @@ export default function ContactSec(){
     return (
         <ContactContainer>
             <SectionHeader text={"Contact"}/>
-            <BubblyButton />
+            <p style={{padding: 30}}>I'm currently open to new opportunities, and happily answer all types of inquiries.</p>
+            <div style={{alignSelf:'center'}}><PopButton text={"Let's talk"} href='mailto:johnson.chantz@gmail.com'/></div>
         </ContactContainer>
     )
 }

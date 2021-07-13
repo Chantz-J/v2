@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import mediaQueries from '../../styles/breakpoints'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-import PopButton from '../PopButton'
+
 
 const StyledNav = styled.nav`
     background: ${props => props.theme.colors.blue[1]};
@@ -34,7 +34,7 @@ const StyledNav = styled.nav`
             li, a {
                 color: ${ props  => props.theme.colors.secondary};
                 font-family: ${props => props.theme.fonts.head};
-                font-size: 1rem;
+                font-size: 1.4rem;
                 font-weight: 300;
                 text-decoration: none;
                 line-height: 1.2;
@@ -57,6 +57,7 @@ export default function Navbar(){
             }
         }
     `)
+
     return (
         <StyledNav>
             <ul>

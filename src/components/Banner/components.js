@@ -4,6 +4,7 @@ import mediaQueries from '../../styles/breakpoints'
 export const StyledBanner = styled.div`
 height: 84vh;
 background-color: ${props => props.theme.colors.blue[1]};
+overflow-x: hidden;
 .hero {
     visibility: hidden;
     height: 100vh;
@@ -96,7 +97,8 @@ background-color: ${props => props.theme.colors.blue[1]};
           .hero-images-inner {
             .hero-image {
               position: absolute;
-              overflow: hidden;
+              overflow-y: hidden;
+
               &.girl {
                 top: 0;
                 right: 0px;

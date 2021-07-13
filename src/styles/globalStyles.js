@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
       
       
       
+      
 
     footer {
         margin-top: auto;

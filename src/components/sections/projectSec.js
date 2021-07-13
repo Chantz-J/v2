@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import mediaQueries from '../../styles/breakpoints'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import SectionHeader from '../SectionHeader'
+import { projectData } from '../Project/data'
 
 import Project from '../Project'
 
@@ -132,7 +133,20 @@ export default function Projects(){
                    )
                })
            } */}
-           <Project />
+           {
+             projectData.map(project => {
+               return (
+                 <Project
+                    name={project.name}
+                    type={project.type}
+                    description={project.description} 
+                    demo={project.demo}
+                    code={project.code}
+                    img={project.img}
+                 />
+               )
+             })
+           }
            </article>
         </ProjectContainer>
     )
