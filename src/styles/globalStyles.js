@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    body {
+      background: ${({ theme }) => theme.colors.blue[1]};
+    }
+
     ::selection {
         background: ${props => props.theme.colors.lightGrey};
         

@@ -34,7 +34,6 @@ const StyledMain = styled.main`
             bottom: 0;
             opacity: 0;
             transform: translateY(3px);
-            background: ${props => props.theme.gradients.second};
             transition: opacity 0.2s ease, transform 0.2s ease;
 
         }

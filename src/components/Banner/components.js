@@ -99,13 +99,13 @@ overflow-x: hidden;
               position: absolute;
               overflow-y: hidden;
 
-              &.girl {
+              &.anime {
                 top: 0;
                 right: 0px;
                 width: 45%;
                 height: 50%;
               }
-              &.boy {
+              &.portrait {
                 bottom: 24px;
                 left: 0px;
                 width: 52%;

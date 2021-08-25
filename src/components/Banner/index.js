@@ -5,8 +5,6 @@ import gsap, { Power3 } from 'gsap'
 import PopButton from '../PopButton'
 import { StyledBanner } from './components'
 
-import anime from '../../assets/anime_me.jpg'
-
 
 export default function Banner(){
     const data = useStaticQuery(graphql`
@@ -88,14 +86,14 @@ export default function Banner(){
                         </div>
                         <div className="hero-images">
                             <div ref={el => images = el}  className="hero-images-inner">
-                                <div className="hero-image girl">
+                                <div className="hero-image anime">
                                     <StaticImage
-                                        src='../../assets/anime_me.jpg'
+                                        src='../../assets/skmb_full_24663520.jpg'
                                         alt='Hero image'
                                         placeholder="blurred"
                                     />
                                 </div>
-                                <div className="hero-image boy">
+                                <div className="hero-image portrait">
                                     <StaticImage
                                         src='../../assets/me.jpg'
                                         alt='Hero image'

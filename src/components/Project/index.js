@@ -1,7 +1,5 @@
-import React from  'react'
-import styled from 'styled-components'
-import { StaticImage } from "gatsby-plugin-image" 
-import mediaQueries from '../../styles/breakpoints'
+import React from  'react';
+import styled from 'styled-components';
 
 
 const ProjectContainer = styled.div`
@@ -135,11 +133,7 @@ max-width: 1200px;
         }
       }
 
-`
-
-// background-color: #64ffda;
-// background: linear-gradient(0.4turn, #1B2631, #5CD2F7);
-// filter: grayscale(100%) contrast(1);
+`;
 
 export default function Project({name, type, description, demo, code, img}){
     return (
@@ -165,5 +159,5 @@ export default function Project({name, type, description, demo, code, img}){
                 </div>
             </div>
         </ProjectContainer>
-    )
-}
+    );
+};

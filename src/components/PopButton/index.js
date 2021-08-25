@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const styles = {
   // background: "#7fffd4",
-  background: "#5CD2F7",
+  background: "#66D7EB",
   borderRadius: '11px',
 //   width: 150,
   padding: "10px 20px",

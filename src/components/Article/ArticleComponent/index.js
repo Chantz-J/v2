@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react"
-import styled from 'styled-components'
-import { gsap } from "gsap"
-import { graphql, useStaticQuery } from "gatsby"
-import ArticleLayout from '../ArticleLayout/ArticleLayout'
-import ArticlesGroup from '../ArticlesGroup'
-import SectionHeader from '../../SectionHeader'
+import React from "react";
+import styled from 'styled-components';
+import { graphql, useStaticQuery } from "gatsby";
+import ArticleLayout from '../ArticleLayout/ArticleLayout';
+import ArticlesGroup from '../ArticlesGroup';
+import SectionHeader from '../../SectionHeader';
 
 
 
@@ -56,19 +55,10 @@ const ArticleContainer = styled.section`
         transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1) !important;
       }
 
-`
+`;
 
 export default function ArticleComponent(){
-  const data = useStaticQuery(query)
-  // const ele = useRef(null)
-
-  // useEffect(() => {
-  //   gsap.fromTo(ele.current, 
-  //     {opacity: 0,},
-  //     {opacity: 1, y: 120, duration: 2,}
-  //   )
-  // }, [])
-
+  const data = useStaticQuery(query);
   return (
     <ArticleLayout seo={data.strapiHomepage.seo}>
         <ArticleContainer>
@@ -80,8 +70,8 @@ export default function ArticleComponent(){
             </div>
         </ArticleContainer>
     </ArticleLayout>
-  )
-}
+  );
+};
 
 const query = graphql`
   query {
@@ -129,7 +119,5 @@ const query = graphql`
         }
       }
     }
-
-
   }
-`
+`;

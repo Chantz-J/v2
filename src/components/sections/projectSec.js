@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import mediaQueries from '../../styles/breakpoints'
-import { Link, graphql, useStaticQuery } from 'gatsby'
 import SectionHeader from '../SectionHeader'
 import { projectData } from '../Project/data'
 
@@ -92,47 +91,11 @@ const ProjectContainer = styled.section`
 
 
 export default function Projects(){
-    const data = useStaticQuery(graphql`
-    query {
-        allMarkdownRemark {
-          edges {
-            node {
-              id
-              html
-              frontmatter {
-                title 
-                date
-                slug
-                summary
-                preview {
-                    publicURL
-                }
-              }
-            }
-          }
-        }
-      }
-    `)
+    
     return (
         <ProjectContainer>
           <SectionHeader text={'Works'} />
           <article>
-           {/* {
-               data.allMarkdownRemark.edges.map(project => {
-                   return(
-                    <Link key={project.node.id} 
-                    to={`${project.node.frontmatter.slug}`}
-                    >
-                      <div className="filter">
-                          <div className="project">
-                            <img src={project.node.frontmatter.preview.publicURL} width="100%"/>
-                            <div className="project-info"></div>
-                          </div>
-                      </div>
-                    </Link>
-                   )
-               })
-           } */}
            {
              projectData.map(project => {
                return (

@@ -1,6 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
-import mediaQueries from '../../styles/breakpoints'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledDiv = styled.div`
     height: 50px;
@@ -27,7 +26,7 @@ const StyledDiv = styled.div`
         padding:0 10px; 
     }
 
-`
+`;
 
 export default function SectionHeader({ text }){
     return (
@@ -36,5 +35,5 @@ export default function SectionHeader({ text }){
                 <span>{ text }</span>
             </h2>
         </StyledDiv>
-    )
-}
+    );
+};

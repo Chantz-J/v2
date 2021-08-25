@@ -6,7 +6,8 @@ import mediaQueries from '.././styles/breakpoints'
 
 import Navbar from './Navbar'
 import Footer from './footer'
-import Sidebar from './sidebar'
+// import Sidebar from './sidebar'
+import SideNav from './SideNav'
 import Mobile from './Mobile'
 
 import GlobalFonts from '.././fonts/fonts'
@@ -25,7 +26,7 @@ export default function Layout(props) {
                 <GlobalLayout>
                     <GlobalFonts />
                     <GlobalStyle />
-                    <Sidebar />
+                    <SideNav />
                     <Mobile />
                     <Navbar />
                         {props.children}

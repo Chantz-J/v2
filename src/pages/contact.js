@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import mediaQueries from '../styles/breakpoints'
-import { useForm, ValidationError } from '@formspree/react'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import mediaQueries from '../styles/breakpoints';
+import { useForm, /*ValidationError*/ } from '@formspree/react';
 
-import Layout from '../components/layout'
-import Head from '../components/head'
+import Layout from '../components/layout';
+import Head from '../components/head';
 
 const StyledMain = styled.main`
   margin-left: 160px;
@@ -116,10 +116,10 @@ const StyledMain = styled.main`
  }
 
 
-`
+`;
 
 export default function Contact(){
-    const [form, setForm] = useState({name: '', email: '', message: ''})
+    const [form, setForm] = useState({name: '', email: '', message: ''});
     const [state, handleSubmit] = useForm("mleaegll");
 
     const handleChange = e => {
@@ -127,8 +127,8 @@ export default function Contact(){
         setForm({
             ...form,
             [name]: value
-        })
-    }
+        });
+    };
 
     return ( 
         <Layout>
@@ -169,5 +169,5 @@ export default function Contact(){
                 </section>
             </StyledMain>
         </Layout>
-    )
-}
+    );
+};
